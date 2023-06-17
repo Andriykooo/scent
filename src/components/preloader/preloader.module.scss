@@ -1,0 +1,35 @@
+.preloader {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(3px);
+  animation: show-up 0.5s ease-in 2s;
+
+  &_logo {
+    visibility: hidden;
+    animation: logo 2s ease-in;
+  }
+}
+
+@keyframes show-up {
+  from {
+    backdrop-filter: blur(3px);
+  }
+
+  to {
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes logo {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    visibility: hidden;
+  }
+}
