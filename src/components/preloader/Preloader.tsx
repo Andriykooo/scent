@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styles from "./preloader.module.scss";
 
-const animationDuration = 2100;
+const animationDuration = 2700;
 
 export const Preloader: React.FC = () => {
   const [isActive, setIsActive] = useState(true);
