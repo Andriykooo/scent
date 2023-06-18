@@ -1,35 +1,21 @@
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./preloader.module.scss";
 
-const animationDuration = 2700;
+const logo = "CENT";
 
 export const Preloader: React.FC = () => {
-  const [isActive, setIsActive] = useState(true);
-
-  const disablePreloader = () => {
-    setIsActive(false);
-  };
-
-  useEffect(() => {
-    const timeoutId = setTimeout(disablePreloader, animationDuration);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, []);
-
   return (
-    isActive && (
-      <div className={styles.preloader}>
-        <Image
-          src="/animated-logo.gif"
-          className={styles.preloader_logo}
-          height={100}
-          width={300}
-          alt="logo"
-        />
+    <div className={styles.preloader}>
+      <div className={styles.preloader_block}> S </div>
+      <div className={styles.preloader_logo}>
+        {logo.split("").map((letter, index) => {
+          return (
+            <div className={styles[`preloader_logo_letter_${index + 1}`]}>
+              {letter}
+            </div>
+          );
+        })}
       </div>
-    )
+    </div>
   );
 };
