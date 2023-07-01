@@ -1,6 +1,18 @@
 @font-face {
   font-family: "Reghteous";
-  src: url(../assets/fonts/Righteous-Regular.ttf) format("truetype");
+  src: url(/fonts/Righteous-Regular.ttf) format("truetype");
+}
+
+:root {
+  /* FONTS */
+  --global-font: Reghteous;
+
+  /* COLORS */
+  --base-color: #1e1e1e;
+  --second-color: #d9d9d9;
+
+  /* TIME */
+  --header-animation-duration: 1.5s;
 }
 
 * {
@@ -13,6 +25,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: var(--global-font);
 }
 
 a {
