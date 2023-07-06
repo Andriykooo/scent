@@ -12,13 +12,20 @@
   --second-color: #ffffff;
 
   /* HEADER */
-  --header-height: 72px;
+  --header-height: 110px;
+
+  /* TRANSITION */
+  --default-transition: 0.3s;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+ul {
+  list-style: none;
 }
 
 html,
