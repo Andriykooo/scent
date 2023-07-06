@@ -1,8 +1,12 @@
 .logo {
   display: flex;
+  height: fit-content;
   padding: 5px 20px;
   background-color: var(--second-color);
   border-radius: 12px;
-  color: var(--base-color);
   opacity: 1;
+  color: var(--base-color);
+  font-family: var((--global-font));
+  font-size: 32px;
+  text-transform: uppercase;
 }

@@ -1,89 +1,12 @@
 .header {
   position: fixed;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  height: var(--header-height);
   width: 100vw;
-  background-color: var(--second-color);
-  font-family: var((--global-font));
-  font-size: 42px;
-  text-transform: uppercase;
-  animation: show-up var(--header-animation-duration) ease;
-
-  &_content {
-    display: flex;
-    justify-content: center;
-    height: 200px;
-    width: 100%;
-    background-color: var(--base-color);
-    animation: go-down var(--header-animation-duration) ease;
-  }
+  background-color: var(--base-color);
 
   &_logo {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     border-radius: 0 0 12px 12px;
-    animation: logo var(--header-animation-duration) ease;
-  }
-}
-
-@keyframes show-up {
-  0% {
-    background-color: var(--base-color);
-  }
-
-  50% {
-    background-color: var(--base-color);
-  }
-
-  100% {
-    background-color: var(--second-color);
-  }
-}
-
-@keyframes go-down {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  60% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes logo {
-  0% {
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--second-color);
-    border-radius: 12px;
-    color: var(--base-color);
-    opacity: 0;
-    filter: blur(4px);
-  }
-
-  50% {
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--second-color);
-    border-radius: 12px;
-    color: var(--base-color);
-    opacity: 1;
-    filter: blur(0px);
-  }
-
-  85% {
-    border-radius: 12px;
-  }
-
-  100% {
-    opacity: 1;
-    filter: blur(0px);
   }
 }

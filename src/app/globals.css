@@ -9,10 +9,10 @@
 
   /* COLORS */
   --base-color: #1e1e1e;
-  --second-color: #d9d9d9;
+  --second-color: #ffffff;
 
-  /* TIME */
-  --header-animation-duration: 1.5s;
+  /* HEADER */
+  --header-height: 72px;
 }
 
 * {
