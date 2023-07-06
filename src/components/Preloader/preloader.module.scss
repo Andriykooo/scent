@@ -1,0 +1,46 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--second-color);
+  opacity: 0;
+  animation: preloader 2s;
+
+  &_logo {
+    animation: logo 1s;
+  }
+}
+
+@keyframes preloader {
+  0% {
+    background-color: var(--base-color);
+    opacity: 1;
+  }
+
+  50% {
+    background-color: var(--base-color);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    background-color: var(--second-color);
+  }
+}
+
+@keyframes logo {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
