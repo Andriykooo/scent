@@ -6,7 +6,6 @@ import { Navigation } from "../navigation/Navigation";
 export const Header: FC = () => {
   return (
     <header className={styles.header}>
-      <Logo className={styles.header_logo} />
       <Navigation />
     </header>
   );

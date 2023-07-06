@@ -5,6 +5,10 @@ import styles from "./navigation.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
+import { Logo } from "../logo/Logo";
+import { ProfileIcon, ShoppingCartIcon, ThemeIcon } from "../icons";
+import { ThemeToggler } from "../themeToggler/ThemeToggler";
+import { SearchInput } from "../searchInput/SearchInput";
 
 const menuList = [
   {
@@ -29,6 +33,17 @@ export const Navigation: FC = () => {
 
   return (
     <nav className={styles.navigation}>
+      <div className={styles.navigation_panel}>
+        <div className={styles.navigation_panel_left}>
+          <ProfileIcon />
+          <ShoppingCartIcon />
+          <ThemeToggler />
+        </div>
+        <Logo className={styles.navigation_panel_logo} />
+        <div className={styles.navigation_panel_right}>
+          <SearchInput />
+        </div>
+      </div>
       <ul className={styles.navigation_list}>
         {menuList.map((menuItem) => {
           return (
