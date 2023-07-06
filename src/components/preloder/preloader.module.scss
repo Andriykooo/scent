@@ -9,7 +9,6 @@
   justify-content: center;
   background-color: var(--second-color);
   opacity: 0;
-  visibility: hidden;
   animation: preloader 2s;
 
   &_logo {
@@ -21,7 +20,6 @@
   0% {
     background-color: var(--base-color);
     opacity: 1;
-    visibility: visible;
   }
 
   50% {
@@ -32,7 +30,6 @@
   100% {
     background-color: var(--second-color);
     opacity: 0;
-    visibility: visible;
   }
 }
 
