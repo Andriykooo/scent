@@ -12,10 +12,15 @@
   --second-color: #ffffff;
 
   /* HEADER */
-  --header-height: 110px;
+  --header-height: 120px;
 
   /* TRANSITION */
   --default-transition: 0.3s;
+
+  /* MEDIA */
+  --desktop-size: 1400px;
+  --tablet-size: 1024px;
+  --mobile-size: 600px;
 }
 
 * {

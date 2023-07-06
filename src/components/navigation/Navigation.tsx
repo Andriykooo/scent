@@ -32,13 +32,12 @@ export const Navigation: FC = () => {
       <ul className={styles.navigation_list}>
         {menuList.map((menuItem) => {
           return (
-            <li
-              key={menuItem.id}
-              className={classNames(styles.navigation_list_item, {
-                [styles.active]: pathname === menuItem.path,
-              })}
-            >
-              <div className={styles.navigation_list_link}>
+            <li key={menuItem.id} className={styles.navigation_list_item}>
+              <div
+                className={classNames(styles.navigation_list_link, {
+                  [styles.active]: pathname === menuItem.path,
+                })}
+              >
                 <Link href={menuItem.path}>{menuItem.name}</Link>
               </div>
             </li>
