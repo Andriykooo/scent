@@ -35,8 +35,6 @@ export const Navigation: FC = () => {
     <nav className={styles.navigation}>
       <div className={styles.navigation_panel}>
         <div className={styles.navigation_panel_left}>
-          <ProfileIcon />
-          <ShoppingCartIcon />
           <ThemeToggler />
         </div>
         <Logo className={styles.navigation_panel_logo} />

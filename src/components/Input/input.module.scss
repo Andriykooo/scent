@@ -1,0 +1,13 @@
+.input {
+  outline: none;
+  border: 0;
+  background: transparent;
+  border-bottom: 2px solid var(--second-color);
+  padding: 5px 5px 5px 0;
+  color: var(--second-color);
+  width: 100%;
+
+  &::placeholder {
+    color: var(--gray-color);
+  }
+}
