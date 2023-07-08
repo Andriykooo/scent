@@ -1,10 +1,11 @@
 "use client";
 
 import { ChangeEvent, FC, useRef, useState } from "react";
-import { SearchIcon } from "../icons";
 import styles from "./search-input.module.scss";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { Input } from "../Input/Input";
+import Image from "next/image";
+import { icons } from "@/constants.ts/icons";
 
 export const SearchInput: FC = ({}) => {
   const inputRef = useRef(null);
@@ -37,7 +38,7 @@ export const SearchInput: FC = ({}) => {
   return (
     <div ref={inputRef}>
       <Input value={input} onChange={handleChange} />
-      <SearchIcon />
+      <Image src={icons.SEARCH_ICON} alt="search" height={30} width={30} />
     </div>
   );
 };
