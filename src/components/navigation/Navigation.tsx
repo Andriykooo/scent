@@ -5,22 +5,23 @@ import styles from "./navigation.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
+import { routes } from "@/constants.ts/routes";
 
 const menuList = [
   {
     id: 1,
-    name: "Men's Fragrances",
-    path: "/mens-fragrances",
+    name: "Men's",
+    path: routes.HOME,
   },
   {
     id: 2,
-    name: "Unisex",
-    path: "/unisex",
+    name: "Fragrance world",
+    path: routes.FRAGRANCE_WORLD,
   },
   {
     id: 3,
     name: "Woman",
-    path: "/woman",
+    path: routes.WOMAN,
   },
 ];
 

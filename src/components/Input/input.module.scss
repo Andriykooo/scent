@@ -1,0 +1,22 @@
+.input {
+  outline: none;
+  border: 0;
+  background: transparent;
+  padding: 5px 5px 5px 0;
+  width: 100%;
+  font-size: 16px;
+
+  &::placeholder {
+    color: var(--gray-color);
+  }
+
+  &.base {
+    color: var(--base-color);
+    border-bottom: 2px solid var(--base-color);
+  }
+
+  &.second {
+    color: var(--second-color);
+    border-bottom: 2px solid var(--second-color);
+  }
+}
