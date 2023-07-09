@@ -1,13 +1,12 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import styles from "./theme.module.scss";
 import classNames from "classnames";
 import { themes } from "@/constants.ts/themes";
 import { useTheme } from "next-themes";
-import { ThemeProvider } from "next-themes";
 
-const Toggler: FC = () => {
+export const Theme: FC = () => {
   const { theme, setTheme } = useTheme();
 
   const handleToggle = () => {
@@ -23,18 +22,4 @@ const Toggler: FC = () => {
       onClick={handleToggle}
     />
   );
-};
-
-export const Theme = () => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  return mounted ? (
-    <ThemeProvider>
-      <Toggler />
-    </ThemeProvider>
-  ) : null;
 };

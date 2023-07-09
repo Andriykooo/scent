@@ -11,6 +11,7 @@
   opacity: 0;
   animation: preloader 2s;
   pointer-events: none;
+  z-index: 1;
 
   &_logo {
     background-color: var(--white-color);

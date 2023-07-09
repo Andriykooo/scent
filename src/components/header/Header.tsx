@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Logo } from "../logo/Logo";
 import { Navigation } from "../navigation/Navigation";
-import { Control } from "../control/control";
 import { Search } from "../search/Search";
 import styles from "./header.module.scss";
+import { Control } from "../control/Control";
 
 export const Header: FC = () => {
   return (

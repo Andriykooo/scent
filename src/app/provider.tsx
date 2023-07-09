@@ -1,8 +1,14 @@
 "use client";
 
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useEffect, useState } from "react";
 import { ThemeProvider } from "next-themes";
 
 export const Provider: FC<PropsWithChildren> = ({ children }) => {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return mounted ? <ThemeProvider>{children}</ThemeProvider> : null;
 };
