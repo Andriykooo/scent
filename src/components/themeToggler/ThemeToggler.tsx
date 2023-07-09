@@ -1,10 +1,13 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useEffect, useState } from "react";
 import styles from "./theme-toggler.module.scss";
 import classNames from "classnames";
 import { themes } from "@/constants.ts/themes";
 import { useTheme } from "next-themes";
+import { ThemeProvider } from "next-themes";
 
-export const ThemeToggler: FC = () => {
+const Toggler: FC = () => {
   const { theme, setTheme } = useTheme();
 
   const handleToggle = () => {
@@ -20,4 +23,18 @@ export const ThemeToggler: FC = () => {
       onClick={handleToggle}
     />
   );
+};
+
+export const ThemeToggler = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return mounted ? (
+    <ThemeProvider>
+      <Toggler />
+    </ThemeProvider>
+  ) : null;
 };

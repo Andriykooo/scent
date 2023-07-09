@@ -7,29 +7,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--second-color);
+  background-color: var(--black-color);
   opacity: 0;
   animation: preloader 2s;
   pointer-events: none;
 
   &_logo {
+    background-color: var(--white-color);
+    color: var(--black-color);
     animation: logo 1s;
   }
 }
 
 @keyframes preloader {
   0% {
-    background-color: var(--base-color);
+    background-color: var(--black-color);
     opacity: 1;
   }
 
   50% {
-    background-color: var(--base-color);
+    background-color: var(--black-color);
     opacity: 1;
   }
 
   100% {
-    background-color: var(--second-color);
+    background-color: var(--white-color);
     opacity: 0;
   }
 }
