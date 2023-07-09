@@ -2,8 +2,8 @@
   position: relative;
   height: 24px;
   width: 24px;
-  border: 3px solid var(--second-color);
-  background-color: var(--base-color);
+  border-width: 3px;
+  border-style: solid;
   border-radius: 50%;
   cursor: pointer;
 
@@ -15,8 +15,17 @@
     width: 12px;
     top: -3px;
     right: -3px;
-    background-color: var(--second-color);
     border-radius: 0 24px 24px 0;
+  }
+
+  &.light {
+    transform: rotate(0);
+    border-color: var(--second-color);
+    background-color: var(--base-color);
+
+    &::before {
+      background-color: var(--second-color);
+    }
   }
 
   &.dark {

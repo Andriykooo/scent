@@ -10,6 +10,7 @@
   background-color: var(--second-color);
   opacity: 0;
   animation: preloader 2s;
+  pointer-events: none;
 
   &_logo {
     animation: logo 1s;

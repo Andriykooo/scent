@@ -39,12 +39,4 @@
       cursor: pointer;
     }
   }
-
-  &_navigation {
-    transition: var(--default-transition);
-
-    &.hidden {
-      transform: translateY(-20px);
-    }
-  }
 }

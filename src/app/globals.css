@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Reghteous";
-  src: url(/fonts/Righteous-Regular.ttf) format("truetype");
-}
-
 :root {
   /* FONTS */
   --global-font: Reghteous;
@@ -28,6 +23,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: all var(--default-transition) ease;
 }
 
 ul {
