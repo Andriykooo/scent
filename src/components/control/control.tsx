@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { routes } from "@/constants.ts/routes";
 import { icons } from "@/constants.ts/icons";
+import { ThemeToggler } from "../themeToggler/ThemeToggler";
 
 export const Control: FC = () => {
   return (
@@ -20,9 +21,7 @@ export const Control: FC = () => {
         </Link>
       </li>
       <li>
-        <Link href={routes.MENS}>
-          <Image src={icons.PIE_CAHRT} height={24} width={24} alt="" />
-        </Link>
+        <ThemeToggler />
       </li>
     </ul>
   );

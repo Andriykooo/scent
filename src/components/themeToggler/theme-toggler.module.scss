@@ -1,0 +1,31 @@
+.theme_toggler {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  border: 3px solid var(--second-color);
+  background-color: var(--base-color);
+  border-radius: 50%;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: inherit;
+    width: 12px;
+    top: -3px;
+    right: -3px;
+    background-color: var(--second-color);
+    border-radius: 0 24px 24px 0;
+  }
+
+  &.dark {
+    transform: rotate(180deg);
+    border-color: var(--base-color);
+    background-color: var(--second-color);
+
+    &::before {
+      background-color: var(--base-color);
+    }
+  }
+}

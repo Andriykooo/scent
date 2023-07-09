@@ -1,6 +1,6 @@
 "use client";
 
-import { PageCarousel } from "../../components/carusel/carusel";
+import { PageCarousel } from "../../components/carusel/Carusel";
 
 export default function MensFragrances() {
   return (
