@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import styles from "./theme-toggler.module.scss";
+import styles from "./theme.module.scss";
 import classNames from "classnames";
 import { themes } from "@/constants.ts/themes";
 import { useTheme } from "next-themes";
@@ -25,7 +25,7 @@ const Toggler: FC = () => {
   );
 };
 
-export const ThemeToggler = () => {
+export const Theme = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

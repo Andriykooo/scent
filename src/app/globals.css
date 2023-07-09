@@ -30,8 +30,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: color 0.1s, background-color var(--default-transition),
-    transform var(--default-transition);
+  transition: all var(--default-transition), color 0.1s;
 }
 
 ul {
