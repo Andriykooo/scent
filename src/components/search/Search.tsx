@@ -5,6 +5,7 @@ import styles from "./search.module.scss";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import Image from "next/image";
 import { icons } from "@/constants.ts/icons";
+import { Icon } from "../icon/Icon";
 
 export const Search: FC = ({}) => {
   const inputRef = useRef(null);
@@ -36,7 +37,7 @@ export const Search: FC = ({}) => {
 
   return (
     <div ref={inputRef} className={styles.Search}>
-      <Image src={icons.SEARCH_ICON} alt="search" height={30} width={30} />
+      <Icon src={icons.SEARCH_ICON} alt="search" height={24} width={24} />
     </div>
   );
 };

@@ -10,6 +10,7 @@
   &_content {
     width: 100%;
     max-width: var(--desktop-size);
+    padding: 0 30px;
   }
 
   &_panel {
@@ -17,7 +18,7 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
 
     &_left {
       display: flex;
@@ -36,13 +37,6 @@
 
     svg {
       cursor: pointer;
-    }
-  }
-
-  &_navigation {
-    transition: var(--default-transition);
-    &.hidden {
-      transform: translateY(-20px);
     }
   }
 }

@@ -11,7 +11,7 @@ const menuList = [
   {
     id: 1,
     name: "Men's",
-    path: routes.HOME,
+    path: routes.MENS,
   },
   {
     id: 2,
