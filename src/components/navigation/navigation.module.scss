@@ -1,14 +1,11 @@
 .navigation {
-  display: flex;
-  justify-content: center;
-  width: 70%;
+  width: 100%;
 
   &_list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    max-width: var(--desktop-size);
     gap: 5px;
 
     &_item {

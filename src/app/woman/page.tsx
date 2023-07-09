@@ -1,5 +1,5 @@
 "use client";
 
 export default function Woman() {
-  return <div>Womans</div>;
+  return <div>Woman</div>;
 }

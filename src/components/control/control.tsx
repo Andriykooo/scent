@@ -2,29 +2,27 @@
 import { FC } from "react";
 import styles from "./control.module.scss";
 import Image from "next/image";
+import Link from "next/link";
+import { routes } from "@/constants.ts/routes";
+import { icons } from "@/constants.ts/icons";
 
 export const Control: FC = () => {
   return (
     <ul className={styles.controlList}>
       <li>
-        <a href="">
-          <Image src="/images/user-image.png" height={24} width={24} alt="" />
-        </a>
+        <Link href={routes.MENS}>
+          <Image src={icons.USER_ICON} height={24} width={24} alt="" />
+        </Link>
       </li>
       <li>
-        <a href="">
-          <Image
-            src="/images/shopping-cart.png"
-            height={24}
-            width={24}
-            alt=""
-          />
-        </a>
+        <Link href={routes.MENS}>
+          <Image src={icons.SHOPPING_CART} height={24} width={24} alt="" />
+        </Link>
       </li>
       <li>
-        <a href="">
-          <Image src="/images/pie-chart.png" height={24} width={24} alt="" />
-        </a>
+        <Link href={routes.MENS}>
+          <Image src={icons.PIE_CAHRT} height={24} width={24} alt="" />
+        </Link>
       </li>
     </ul>
   );
