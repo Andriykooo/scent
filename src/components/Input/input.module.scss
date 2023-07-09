@@ -2,12 +2,21 @@
   outline: none;
   border: 0;
   background: transparent;
-  border-bottom: 2px solid var(--second-color);
   padding: 5px 5px 5px 0;
-  color: var(--second-color);
   width: 100%;
+  font-size: 16px;
 
   &::placeholder {
     color: var(--gray-color);
+  }
+
+  &.base {
+    color: var(--base-color);
+    border-bottom: 2px solid var(--base-color);
+  }
+
+  &.second {
+    color: var(--second-color);
+    border-bottom: 2px solid var(--second-color);
   }
 }

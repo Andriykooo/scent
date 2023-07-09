@@ -6,4 +6,43 @@
   height: var(--header-height);
   width: 100vw;
   background-color: var(--base-color);
+
+  &_content {
+    width: 100%;
+    max-width: var(--desktop-size);
+  }
+
+  &_panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+
+    &_left {
+      display: flex;
+      justify-self: flex-start;
+    }
+
+    &_logo {
+      justify-self: center;
+      border-radius: 0 0 12px 12px;
+    }
+
+    &_right {
+      display: flex;
+      justify-self: flex-end;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  &_navigation {
+    transition: var(--default-transition);
+    &.hidden {
+      transform: translateY(-20px);
+    }
+  }
 }
