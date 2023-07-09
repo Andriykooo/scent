@@ -2,8 +2,8 @@
   position: relative;
   height: 24px;
   width: 24px;
-  border-width: 3px;
-  border-style: solid;
+  border: 3px solid var(--second-color);
+  background-color: var(--second-color);
   border-radius: 50%;
   cursor: pointer;
 
@@ -11,30 +11,19 @@
     content: "";
     position: absolute;
     display: block;
-    height: inherit;
-    width: 12px;
-    top: -3px;
-    right: -3px;
+    height: 100%;
+    width: 9px;
+    top: 0;
+    right: 0;
     border-radius: 0 24px 24px 0;
+    background-color: var(--base-color);
   }
 
   &.light {
     transform: rotate(0);
-    border-color: var(--second-color);
-    background-color: var(--base-color);
-
-    &::before {
-      background-color: var(--second-color);
-    }
   }
 
   &.dark {
     transform: rotate(180deg);
-    border-color: var(--base-color);
-    background-color: var(--second-color);
-
-    &::before {
-      background-color: var(--base-color);
-    }
   }
 }
