@@ -20,7 +20,7 @@ const menuList = [
   },
   {
     id: 3,
-    name: "Woman",
+    name: "WOMEN'S FRAGRANCES",
     path: routes.WOMAN,
   },
 ];

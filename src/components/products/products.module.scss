@@ -1,0 +1,58 @@
+.Title {
+  display: flex;
+  font-weight: 900;
+  font-size: 22px;
+  width: 90%;
+  display: inline-flex;
+  padding-top: 40px;
+}
+
+.UnderLine {
+  border-bottom: 2px solid black;
+  width: 89%;
+}
+
+.ViewAll {
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: flex-end;
+  display: inline-flex;
+  text-decoration: underline 2px solid black;
+  text-underline-offset: 5.3px;
+}
+
+.ProductGallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 40px;
+
+  a {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+
+    strong {
+      font-size: 20px;
+      padding-top: 20px;
+    }
+
+    > span {
+      padding-top: 10px;
+      color: #000;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+
+.redSold {
+  color: red;
+}
