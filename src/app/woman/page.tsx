@@ -1,5 +1,5 @@
 "use client";
 
-export default function Woman() {
+export default function Page() {
   return <div>Woman</div>;
 }

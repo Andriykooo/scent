@@ -2,13 +2,13 @@
 
 import { FC, PropsWithChildren, ReactNode, useState } from "react";
 import Slider from "react-slick";
-import styles from "./banner.module.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { BnnerType } from "@/app/types/bannerType";
+import { BnnerType } from "@/types/bannerType";
 import Image from "next/image";
 import classNames from "classnames";
 import { icons } from "@/constants/icons";
+import styles from "./banner.module.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 type BannerProps = {
   data: BnnerType[];

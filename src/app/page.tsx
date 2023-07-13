@@ -1,12 +1,6 @@
-"use client";
 
-import { Banner } from "@/components/banner/Banner";
-import { banneData } from "@/mock/banner";
+import { Home } from "@/screens/home/Home";
 
-export default function Home() {
-  return (
-    <div>
-      <Banner data={banneData} />
-    </div>
-  );
+export default function Page() {
+  return <Home />;
 }

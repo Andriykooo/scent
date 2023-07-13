@@ -1,4 +1,4 @@
-import { BnnerType } from "@/app/types/bannerType";
+import { BnnerType } from "@/types/bannerType";
 import { bannerImages } from "@/constants/images";
 
 export const banneData: BnnerType[] = [
