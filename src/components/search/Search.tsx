@@ -4,7 +4,7 @@ import { ChangeEvent, FC, useRef, useState } from "react";
 import styles from "./search.module.scss";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import Image from "next/image";
-import { icons } from "@/constants.ts/icons";
+import { icons } from "@/constants/icons";
 import { Icon } from "../icon/Icon";
 
 export const Search: FC = ({}) => {

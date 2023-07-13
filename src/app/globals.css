@@ -30,7 +30,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: all var(--default-transition), color 0.1s;
+  transition: background-color var(--default-transition),
+    transform var(--default-transition), opacity var(--default-transition),
+    color 0.1s;
 }
 
 ul {

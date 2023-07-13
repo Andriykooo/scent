@@ -5,7 +5,7 @@ import styles from "./navigation.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
-import { routes } from "@/constants.ts/routes";
+import { routes } from "@/constants/routes";
 
 const menuList = [
   {
