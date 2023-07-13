@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, PropsWithChildren, ReactNode, useRef, useState } from "react";
+import { FC, PropsWithChildren, ReactNode, useState } from "react";
 import Slider from "react-slick";
 import styles from "./banner.module.scss";
 import "slick-carousel/slick/slick.css";
@@ -18,30 +18,17 @@ type CustomDotProps = {
   active: boolean;
 };
 
-const CustomPrevArrow: FC = (props) => {
-  return (
-    <div {...props} style={{ zIndex: 1 }}>
-      <div className={classNames(styles.banner_arrow, styles.prev)}>
-        <Image
-          src={icons.ARROW}
-          alt="previous-arrow"
-          height={50}
-          width={30}
-          className={styles.banner_arrow_icon}
-        />
-        <div className={styles.banner_arrow_background} />
-      </div>
-    </div>
-  );
+type CustomArrowProps = {
+  type: "next" | "prev";
 };
 
-const CustomNextArrow: FC = (props) => {
+const CustomArrow: FC<CustomArrowProps> = (props) => {
   return (
     <div {...props} style={{ zIndex: 1 }}>
-      <div className={classNames(styles.banner_arrow, styles.next)}>
+      <div className={classNames(styles.banner_arrow, styles[props.type])}>
         <Image
           src={icons.ARROW}
-          alt="next-arrow"
+          alt={`${props.type}-arrow`}
           height={50}
           width={30}
           className={styles.banner_arrow_icon}
@@ -76,7 +63,7 @@ export const Banner: FC<BannerProps> = ({ data }) => {
     autoplay: true,
     arrows: true,
     swipeToSlide: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplaySpeed: 10000,
@@ -88,8 +75,8 @@ export const Banner: FC<BannerProps> = ({ data }) => {
     customPaging: (slideNumber: number) => {
       return <CustomDot active={slideNumber === currentSlide} />;
     },
-    nextArrow: <CustomNextArrow />,
-    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomArrow type="next" />,
+    prevArrow: <CustomArrow type="prev" />,
   };
 
   return (

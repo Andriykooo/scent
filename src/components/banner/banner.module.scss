@@ -60,6 +60,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 0;
 
     &_background {
       height: 120px;
@@ -94,6 +95,12 @@
       .banner_arrow_icon {
         transform: translate(-50%, -50%) rotate(181deg);
       }
+    }
+  }
+
+  &:hover {
+    .banner_arrow {
+      opacity: 1;
     }
   }
 }

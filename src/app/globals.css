@@ -31,7 +31,8 @@
   padding: 0;
   margin: 0;
   transition: background-color var(--default-transition),
-    transform var(--default-transition), color 0.1s;
+    transform var(--default-transition), opacity var(--default-transition),
+    color 0.1s;
 }
 
 ul {
