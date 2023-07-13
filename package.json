@@ -16,11 +16,14 @@
     "npm": "^9.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-slick": "^0.29.0",
     "sass": "^1.63.4",
+    "slick-carousel": "^1.8.1",
     "zustand": "^4.3.9"
   },
   "devDependencies": {
     "@types/node": "20.3.1",
+    "@types/react-slick": "^0.23.10",
     "typescript": "5.1.3"
   }
 }

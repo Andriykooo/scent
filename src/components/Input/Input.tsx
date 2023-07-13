@@ -1,7 +1,7 @@
 import { ChangeEvent, FC } from "react";
 import styles from "./input.module.scss";
 import classNames from "classnames";
-import { variants } from "@/constants.ts/variants";
+import { variants } from "@/constants/variants";
 import { ValueOf } from "../utils/valueOf";
 
 type InputProps = {

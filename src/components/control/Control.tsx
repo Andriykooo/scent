@@ -2,7 +2,7 @@
 import { FC } from "react";
 import styles from "./control.module.scss";
 import Image from "next/image";
-import { icons } from "@/constants.ts/icons";
+import { icons } from "@/constants/icons";
 import { Theme } from "../theme/Theme";
 import { Icon } from "../icon/Icon";
 

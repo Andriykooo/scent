@@ -3,5 +3,6 @@
   max-width: var(--desktop-size);
   min-height: calc(100vh - var(--header-height));
   margin: var(--header-height) auto 0;
+  padding: 0 30px;
   background-color: var(--second-color);
 }

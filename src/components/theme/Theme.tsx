@@ -3,7 +3,7 @@
 import { FC, useEffect } from "react";
 import styles from "./theme.module.scss";
 import classNames from "classnames";
-import { themes } from "@/constants.ts/themes";
+import { themes } from "@/constants/themes";
 import { useTheme } from "next-themes";
 
 export const Theme: FC = () => {
