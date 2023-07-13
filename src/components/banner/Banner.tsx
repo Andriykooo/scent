@@ -60,13 +60,12 @@ export const Banner: FC<BannerProps> = ({ data }) => {
   const settings = {
     dots: true,
     infinite: true,
-    autoplay: true,
     arrows: true,
-    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 10000,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 10000,
     className: styles.banner,
     afterChange: setCurrentSlide,
     appendDots: (dots: ReactNode) => {
@@ -83,14 +82,16 @@ export const Banner: FC<BannerProps> = ({ data }) => {
     <Slider {...settings}>
       {data?.map((image) => {
         return (
-          <div key={image.id} className={styles.banner_item}>
-            <Image
-              src={image.link}
-              alt="carousel-item"
-              className={styles.banner_image}
-              fill
-            />
-            <h2 className={styles.banner_title}>{image.title}</h2>
+          <div key={image.id} className={styles.banner_item_wrapper}>
+            <div className={styles.banner_item}>
+              <Image
+                src={image.link}
+                alt="carousel-item"
+                className={styles.banner_image}
+                fill
+              />
+              <h2 className={styles.banner_title}>{image.title}</h2>
+            </div>
           </div>
         );
       })}

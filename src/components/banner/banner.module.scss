@@ -23,11 +23,15 @@
   &_item {
     position: relative;
     height: 700px;
-    width: calc(100% - 20px);
     margin: 0 auto;
 
     &:focus-visible {
       outline: none;
+    }
+
+    &_wrapper {
+      display: flex;
+      width: 100%;
     }
 
     @media screen and (max-width: 1024px) {
