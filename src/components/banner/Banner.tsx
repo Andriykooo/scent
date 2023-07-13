@@ -90,6 +90,7 @@ export const Banner: FC<BannerProps> = ({ data }) => {
               className={styles.banner_image}
               fill
             />
+            <h2 className={styles.banner_title}>{image.title}</h2>
           </div>
         );
       })}

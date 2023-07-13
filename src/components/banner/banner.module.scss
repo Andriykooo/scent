@@ -3,6 +3,23 @@
   border-radius: 30px;
   overflow: hidden;
 
+  &_title {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    color: var(--white-color);
+    font-size: 54px;
+    font-weight: 600;
+
+    @media screen and (max-width: 600px) {
+      & {
+        bottom: 40px;
+        left: 30px;
+        font-size: 32px;
+      }
+    }
+  }
+
   &_item {
     position: relative;
     height: 700px;
@@ -42,6 +59,12 @@
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+
+    @media screen and (max-width: 600px) {
+      & {
+        bottom: 20px;
+      }
+    }
   }
 
   &_dot {
