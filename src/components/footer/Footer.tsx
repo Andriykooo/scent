@@ -57,7 +57,7 @@ export const Footer: FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer_content}>
-        <div className={styles.footer_content_left}>
+        <div className={styles.footer_content_main}>
           <div className={styles.footer_copyright}>
             <Logo variant={variants.SECOND} className={styles.footer_logo} />
             <Copyright />
@@ -78,24 +78,22 @@ export const Footer: FC = () => {
             })}
           </div>
         </div>
-        <div className={styles.footer_content_right}>
-          <ul className={styles.footer_social}>
-            {socials.map((social) => {
-              return (
-                <li key={social.id}>
-                  <a href={social.link} target="_blank">
-                    <Icon
-                      src={social.image}
-                      alt={social.name}
-                      height={28}
-                      width={28}
-                    />
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <ul className={styles.footer_social}>
+          {socials.map((social) => {
+            return (
+              <li key={social.id}>
+                <a href={social.link} target="_blank">
+                  <Icon
+                    src={social.image}
+                    alt={social.name}
+                    height={28}
+                    width={28}
+                  />
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </footer>
   );
