@@ -2,7 +2,8 @@
   /* COLORS */
   --black-color: #000000;
   --white-color: #ffffff;
-  --gray-color: #d9d9d9;
+  --gray-color: #979797;
+  --gray-light-color: #e3e3e3;
 
   /* HEADER */
   --header-height: 100px;
@@ -31,8 +32,7 @@
   padding: 0;
   margin: 0;
   transition: background-color var(--default-transition),
-    transform var(--default-transition), opacity var(--default-transition),
-    color 0.1s;
+    transform var(--default-transition), opacity var(--default-transition);
 }
 
 ul {
