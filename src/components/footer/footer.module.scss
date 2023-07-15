@@ -1,5 +1,31 @@
 .footer {
-  min-height: 280px;
+  display: flex;
+  justify-content: center;
+  min-height: 200px;
   background-color: var(--base-color);
   color: var(--second-color);
+
+  &_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--desktop-size);
+    padding: 30px;
+
+    &_left {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+  }
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    row-gap: 20px;
+    font-size: 14px;
+    color: var(--second-color);
+  }
 }
