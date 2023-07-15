@@ -30,6 +30,106 @@ const columns = [
       },
     ],
   },
+  {
+    id: 1,
+    items: [
+      {
+        id: 1,
+        name: "About us",
+        link: "/about-us",
+      },
+      {
+        id: 2,
+        name: "Terms of use",
+        link: "/terms-of-use",
+      },
+      {
+        id: 3,
+        name: "Payment methods",
+        link: "/payment-methods",
+      },
+    ],
+  },
+  {
+    id: 1,
+    items: [
+      {
+        id: 1,
+        name: "About us",
+        link: "/about-us",
+      },
+      {
+        id: 2,
+        name: "Terms of use",
+        link: "/terms-of-use",
+      },
+      {
+        id: 3,
+        name: "Payment methods",
+        link: "/payment-methods",
+      },
+    ],
+  },
+  {
+    id: 1,
+    items: [
+      {
+        id: 1,
+        name: "About us",
+        link: "/about-us",
+      },
+      {
+        id: 2,
+        name: "Terms of use",
+        link: "/terms-of-use",
+      },
+      {
+        id: 3,
+        name: "Payment methods",
+        link: "/payment-methods",
+      },
+    ],
+  },
+  {
+    id: 1,
+    items: [
+      {
+        id: 1,
+        name: "About us",
+        link: "/about-us",
+      },
+      {
+        id: 2,
+        name: "Terms of use",
+        link: "/terms-of-use",
+      },
+      {
+        id: 3,
+        name: "Payment methods",
+        link: "/payment-methods",
+      },
+    ],
+  },
+  {
+    id: 1,
+    items: [
+      {
+        id: 1,
+        name: "About us",
+        link: "/about-us",
+      },
+      {
+        id: 2,
+        name: "Terms of use",
+        link: "/terms-of-use",
+      },
+      {
+        id: 3,
+        name: "Payment methods",
+        link: "/payment-methods",
+      },
+    ],
+  },
 ];
 
 const socials = [

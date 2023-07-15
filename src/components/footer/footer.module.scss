@@ -46,6 +46,10 @@
     column-gap: 80px;
     row-gap: 40px;
 
+    @media screen and (max-width: 1024px) {
+      row-gap: 25px;
+    }
+
     @media screen and (max-width: 600px) {
       flex-direction: column;
       justify-content: center;
