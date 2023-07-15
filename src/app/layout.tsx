@@ -6,7 +6,7 @@ import { Preloader } from "@/components/preloder/Preloader";
 import { Provider } from "./provider";
 import "./globals.css";
 
-const mulish = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Scent",
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={mulish.className}>
+      <body className={montserrat.className}>
         <Preloader />
         <Provider>
           <Header />
