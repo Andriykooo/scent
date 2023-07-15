@@ -75,7 +75,7 @@
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background: var(--gray-color);
+    background: var(--gray-light-color);
     cursor: pointer;
 
     &.active {
@@ -92,7 +92,7 @@
     &_background {
       height: 120px;
       width: 50px;
-      background-color: var(--gray-color);
+      background-color: var(--gray-light-color);
       opacity: 0.6;
     }
 

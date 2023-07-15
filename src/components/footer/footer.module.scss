@@ -4,6 +4,7 @@
   min-height: 200px;
   background-color: var(--base-color);
   color: var(--second-color);
+  font-size: 14px;
 
   &_content {
     display: flex;
@@ -15,17 +16,35 @@
 
     &_left {
       display: flex;
-      align-items: center;
-      gap: 60px;
+      gap: 100px;
     }
   }
 
-  &_list {
+  &_social {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 60px;
-    row-gap: 20px;
-    font-size: 14px;
-    color: var(--second-color);
+    gap: 25px;
+  }
+
+  &_columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+
+  &_column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &_copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &_logo {
+    padding: 0;
   }
 }
