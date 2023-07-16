@@ -96,8 +96,17 @@ export const Carousel: FC<CarouselProps> = ({
 
   const lastPageIndex = pages.length - 1;
 
+  const [isHover, setIsHover] = useState(false);
   const [prevArrow, setPrevArrow] = useState(true);
   const [nextArrow, setNextArrow] = useState(true);
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
 
   const handleNext = () => {
     if (infinity && activePageIndex === lastPageIndex) {
@@ -123,17 +132,21 @@ export const Carousel: FC<CarouselProps> = ({
   }, [activePageIndex, pages.length]);
 
   useEffect(() => {
-    if (autoplay && lastPageIndex) {
+    if (autoplay && lastPageIndex && !isHover) {
       const intervalId = setInterval(handleNext, delay);
 
       return () => {
         clearInterval(intervalId);
       };
     }
-  }, [autoplay, lastPageIndex, handleNext]);
+  }, [autoplay, lastPageIndex, isHover, handleNext]);
 
   return (
-    <div className={styles.carousel_wrapper}>
+    <div
+      className={styles.carousel_wrapper}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <ul
         ref={scrollRef}
         className={classNames(styles.carousel, className)}
