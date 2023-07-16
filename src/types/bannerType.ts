@@ -1,5 +1,5 @@
 export type BnnerType = {
   id: number;
-  link: string;
+  image: string;
   title?: string;
 };
