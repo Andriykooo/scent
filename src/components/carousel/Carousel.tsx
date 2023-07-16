@@ -1,11 +1,11 @@
 "use client";
 
 import classNames from "classnames";
-import Image from "next/image";
 import { FC, ReactNode, useEffect, useState } from "react";
 import { useSnapCarousel } from "react-snap-carousel";
-import { icons } from "../../constants/icons";
 import styles from "./carousel.module.scss";
+import { Arrow } from "./components/arrow/Arrow";
+import { Dots } from "./components/dots/Dots";
 
 type CatouselItemType = {
   id: number;
@@ -21,57 +21,6 @@ type CarouselProps = {
   infinity?: boolean;
   fullWidth?: boolean;
   className?: string;
-};
-
-type DotsProps = {
-  count?: number;
-  activeDotIndex?: number;
-  goTo?: (index: number) => void;
-};
-
-type ArrowProps = {
-  type: "next" | "prev";
-  onClick: () => void;
-};
-
-const Arrow: FC<ArrowProps> = ({ type, onClick }) => {
-  return (
-    <div
-      className={classNames(styles.carousel_arrow, styles[type])}
-      onClick={onClick}
-    >
-      <Image
-        src={icons.ARROW}
-        alt={`${type}-arrow`}
-        height={50}
-        width={30}
-        className={styles.carousel_arrow_icon}
-      />
-      <div className={styles.carousel_arrow_background} />
-    </div>
-  );
-};
-
-const Dots: FC<DotsProps> = ({ count, activeDotIndex, goTo }) => {
-  return (
-    <ul className={styles.carousel_dots}>
-      {count &&
-        count > 0 &&
-        new Array(count).fill("")?.map((_, index) => {
-          return (
-            <div
-              key={index}
-              className={classNames(styles.carousel_dot, {
-                [styles.active]: activeDotIndex === index,
-              })}
-              onClick={() => {
-                goTo?.(index);
-              }}
-            />
-          );
-        })}
-    </ul>
-  );
 };
 
 export const Carousel: FC<CarouselProps> = ({
@@ -174,8 +123,20 @@ export const Carousel: FC<CarouselProps> = ({
           );
         })}
       </ul>
-      {arrows && prevArrow && <Arrow type="prev" onClick={handlePrev} />}
-      {arrows && nextArrow && <Arrow type="next" onClick={handleNext} />}
+      {arrows && prevArrow && (
+        <Arrow
+          type="prev"
+          onClick={handlePrev}
+          className={styles.carousel_arrow}
+        />
+      )}
+      {arrows && nextArrow && (
+        <Arrow
+          type="next"
+          onClick={handleNext}
+          className={styles.carousel_arrow}
+        />
+      )}
       {dots && (
         <Dots
           count={pages.length}
