@@ -18,18 +18,6 @@
     }
   }
 
-  &_item {
-    position: relative;
-    flex-shrink: 0;
-    height: 200px;
-    width: 100%;
-
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
   &_arrow {
     position: absolute;
     top: 50%;
@@ -53,7 +41,7 @@
     }
 
     &.prev {
-      left: 25px;
+      left: 0;
 
       .carousel_arrow_background {
         border-radius: 0 12px 12px 0;
@@ -61,7 +49,7 @@
     }
 
     &.next {
-      right: 25px;
+      right: 0;
 
       .carousel_arrow_background {
         border-radius: 12px 0 0 12px;

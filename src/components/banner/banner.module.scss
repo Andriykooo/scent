@@ -1,7 +1,15 @@
 .banner {
+  position: relative;
+  height: 60vh;
   width: 100%;
+  flex-shrink: 0;
   border-radius: 30px;
+  margin: 0 10px;
   overflow: hidden;
+
+  &_wrapper {
+    border-radius: 30px;
+  }
 
   &_title {
     position: absolute;
@@ -17,42 +25,6 @@
         left: 30px;
         font-size: 32px;
       }
-    }
-  }
-
-  &_item {
-    position: relative;
-    height: 700px;
-    margin: 0 auto;
-
-    &:focus-visible {
-      outline: none;
-    }
-
-    &_wrapper {
-      display: flex;
-      width: 100%;
-    }
-
-    @media screen and (max-width: 1024px) {
-      & {
-        height: 400px;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      & {
-        height: 200px;
-      }
-    }
-  }
-
-  &_image {
-    border-radius: 30px;
-    height: 100%;
-
-    &:focus-visible {
-      outline: none;
     }
   }
 }
