@@ -2,17 +2,24 @@
 
 import classNames from "classnames";
 import Image from "next/image";
-import { FC, PropsWithChildren, useEffect, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import { useSnapCarousel } from "react-snap-carousel";
 import { icons } from "../../constants/icons";
 import styles from "./carousel.module.scss";
 
+type CatouselItemType = {
+  id: number;
+  render: ReactNode;
+};
+
 type CarouselProps = {
+  data: CatouselItemType[];
   arrows?: boolean;
   autoplay?: boolean;
   delay?: number;
   dots?: boolean;
   infinity?: boolean;
+  fullWidth?: boolean;
   className?: string;
 };
 
@@ -67,17 +74,26 @@ const Dots: FC<DotsProps> = ({ count, activeDotIndex, goTo }) => {
   );
 };
 
-export const Carousel: FC<PropsWithChildren<CarouselProps>> = ({
-  children,
+export const Carousel: FC<CarouselProps> = ({
+  data,
   autoplay,
   delay = 10000,
   dots,
   arrows,
   infinity,
+  fullWidth,
   className,
 }) => {
-  const { scrollRef, pages, activePageIndex, prev, next, goTo } =
-    useSnapCarousel();
+  const {
+    scrollRef,
+    pages,
+    activePageIndex,
+    prev,
+    next,
+    goTo,
+    snapPointIndexes,
+  } = useSnapCarousel();
+
   const lastPageIndex = pages.length - 1;
 
   const [prevArrow, setPrevArrow] = useState(true);
@@ -118,9 +134,33 @@ export const Carousel: FC<PropsWithChildren<CarouselProps>> = ({
 
   return (
     <div className={styles.carousel_wrapper}>
-      <div ref={scrollRef} className={classNames(styles.carousel, className)}>
-        {children}
-      </div>
+      <ul
+        ref={scrollRef}
+        className={classNames(styles.carousel, className)}
+        style={{ scrollSnapType: "x mandatory" }}
+      >
+        {data.map((item, index) => {
+          const snapStyle: {
+            scrollSnapAlign?: string;
+          } = {};
+
+          if (snapPointIndexes.has(index)) {
+            snapStyle.scrollSnapAlign = "start";
+          }
+
+          return (
+            <li
+              key={item.id}
+              className={classNames(styles.carousel_item, {
+                [styles.full_width]: fullWidth,
+              })}
+              style={snapStyle}
+            >
+              {item.render}
+            </li>
+          );
+        })}
+      </ul>
       {arrows && prevArrow && <Arrow type="prev" onClick={handlePrev} />}
       {arrows && nextArrow && <Arrow type="next" onClick={handleNext} />}
       {dots && (
