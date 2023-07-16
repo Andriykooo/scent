@@ -1,25 +1,25 @@
-import { BnnerType } from "@/types/bannerType";
 import { bannerImages } from "@/constants/images";
+import { BnnerType } from "@/types/bannerType";
 
 export const banneData: BnnerType[] = [
   {
     id: 1,
     title: "Scent of the year",
-    link: bannerImages.IMAGE_1,
+    image: bannerImages.IMAGE_1,
   },
   {
     id: 2,
     title: "Scent of the year",
-    link: bannerImages.IMAGE_2,
+    image: bannerImages.IMAGE_2,
   },
   {
     id: 3,
     title: "Scent of the year",
-    link: bannerImages.IMAGE_3,
+    image: bannerImages.IMAGE_3,
   },
   {
     id: 4,
     title: "Scent of the year",
-    link: bannerImages.IMAGE_4,
+    image: bannerImages.IMAGE_4,
   },
 ];

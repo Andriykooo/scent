@@ -46,6 +46,20 @@ body {
   background-color: var(--second-color);
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--base-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-color);
+  border-radius: 2px;
+}
+
 a {
   color: inherit;
   text-decoration: none;

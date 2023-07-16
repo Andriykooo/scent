@@ -1,7 +1,25 @@
 .banner {
+  position: relative;
+  height: 60vh;
   width: 100%;
+  flex-shrink: 0;
   border-radius: 30px;
   overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    height: 45vh;
+  }
+
+  @media screen and (max-width: 600px) {
+    min-height: 200px;
+    height: 30vh;
+  }
+
+  &_wrapper {
+    display: flex;
+    gap: 20px;
+    border-radius: 30px;
+  }
 
   &_title {
     position: absolute;
@@ -12,122 +30,13 @@
     font-weight: 600;
 
     @media screen and (max-width: 600px) {
-      & {
-        bottom: 40px;
-        left: 30px;
-        font-size: 32px;
-      }
-    }
-  }
-
-  &_item {
-    position: relative;
-    height: 700px;
-    margin: 0 auto;
-
-    &:focus-visible {
-      outline: none;
-    }
-
-    &_wrapper {
-      display: flex;
-      width: 100%;
-    }
-
-    @media screen and (max-width: 1024px) {
-      & {
-        height: 400px;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      & {
-        height: 200px;
-      }
+      bottom: 40px;
+      left: 30px;
+      font-size: 32px;
     }
   }
 
   &_image {
-    border-radius: 30px;
-    height: 100%;
-
-    &:focus-visible {
-      outline: none;
-    }
-  }
-
-  &_dots {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-
-    @media screen and (max-width: 600px) {
-      & {
-        bottom: 20px;
-      }
-    }
-  }
-
-  &_dot {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background: var(--gray-light-color);
-    cursor: pointer;
-
-    &.active {
-      background-color: var(--black-color);
-    }
-  }
-
-  &_arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-
-    &_background {
-      height: 120px;
-      width: 50px;
-      background-color: var(--gray-light-color);
-      opacity: 0.6;
-    }
-
-    &_icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-    }
-
-    &.prev {
-      left: 25px;
-
-      .banner_arrow_background {
-        border-radius: 0 12px 12px 0;
-      }
-    }
-
-    &.next {
-      right: 25px;
-
-      .banner_arrow_background {
-        border-radius: 12px 0 0 12px;
-      }
-
-      .banner_arrow_icon {
-        transform: translate(-50%, -50%) rotate(181deg);
-      }
-    }
-  }
-
-  &:hover {
-    .banner_arrow {
-      opacity: 1;
-    }
+    object-fit: cover;
   }
 }
