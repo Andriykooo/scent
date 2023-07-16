@@ -12,7 +12,7 @@ export const Banner: FC = () => {
       {banneData.map((banner) => {
         return (
           <div className={styles.banner}>
-            <Image src={banner.image} alt="banner" fill />
+            <Image src={banner.image} alt="banner" fill className={styles.banner_image} />
             {banner?.title && (
               <h2 className={styles.banner_title}>{banner.title}</h2>
             )}

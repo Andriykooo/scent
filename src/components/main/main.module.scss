@@ -5,4 +5,8 @@
   margin: var(--header-height) auto 0;
   padding: 0 30px;
   background-color: var(--second-color);
+
+  @media screen and (max-width: 600px) {
+    padding: 0 15px;
+  }
 }

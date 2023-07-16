@@ -7,6 +7,15 @@
   margin: 0 10px;
   overflow: hidden;
 
+  @media screen and (max-width: 1024px) {
+    height: 45vh;
+  }
+
+  @media screen and (max-width: 600px) {
+    min-height: 200px;
+    height: 30vh;
+  }
+
   &_wrapper {
     border-radius: 30px;
   }
@@ -20,11 +29,13 @@
     font-weight: 600;
 
     @media screen and (max-width: 600px) {
-      & {
-        bottom: 40px;
-        left: 30px;
-        font-size: 32px;
-      }
+      bottom: 40px;
+      left: 30px;
+      font-size: 32px;
     }
+  }
+
+  &_image {
+    object-fit: cover;
   }
 }

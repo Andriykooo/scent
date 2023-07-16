@@ -29,6 +29,10 @@
     @media screen and (max-width: 1024px) {
       flex-direction: column-reverse;
     }
+
+    @media screen and (max-width: 600px) {
+      padding: 30px 15px;
+    }
   }
 
   &_social {
