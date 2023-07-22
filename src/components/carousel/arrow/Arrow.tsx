@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import Image from "next/image";
 import { FC } from "react";
-import { icons } from "../../../../constants/icons";
 import styles from "./arrow.module.scss";
+import { icons } from "@/constants/icons";
 
 type ArrowProps = {
   type: "next" | "prev";

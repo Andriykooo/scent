@@ -1,0 +1,22 @@
+.search_result {
+  &_title {
+    color: var(--gray-color);
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &_list {
+    margin-top: 18px;
+  }
+
+  &_item {
+    width: 100%;
+    color: var(--base-color);
+    font-size: 20px;
+    font-weight: 300;
+
+    &:hover {
+      background-color: var(--gray-light-color);
+    }
+  }
+}

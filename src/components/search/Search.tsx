@@ -3,9 +3,10 @@
 import { ChangeEvent, FC, useRef, useState } from "react";
 import styles from "./search.module.scss";
 import { useClickOutside } from "@/hooks/useClickOutside";
-import Image from "next/image";
 import { icons } from "@/constants/icons";
 import { Icon } from "../icon/Icon";
+import { Input } from "../Input/Input";
+import { SearchResult } from "./searchResult/SearchResult";
 
 export const Search: FC = ({}) => {
   const inputRef = useRef(null);
@@ -29,15 +30,37 @@ export const Search: FC = ({}) => {
     }
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
+  const handleChange = (value: string) => {
+    setInput(value);
   };
 
   useClickOutside(inputRef, close);
 
   return (
-    <div ref={inputRef} className={styles.Search}>
-      <Icon src={icons.SEARCH_ICON} alt="search" height={24} width={24} />
-    </div>
+    <>
+      <Icon
+        src={icons.SEARCH_ICON}
+        alt="search"
+        height={24}
+        width={24}
+        onClick={toggle}
+        className={styles.search_icon}
+      />
+      {isOpen && (
+        <div className={styles.search_wrapper}>
+          <div ref={inputRef} className={styles.search}>
+            <Input
+              placeholder="Search..."
+              value={input}
+              onChange={handleChange}
+              clear
+              onCleaer={close}
+            />
+            <SearchResult title="Designers" data={[]} />
+            <SearchResult title="Recent search" data={[]} />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
