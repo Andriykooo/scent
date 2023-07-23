@@ -1,5 +1,6 @@
 "use client";
 
+import { Banner } from "@/components/banner/Banner";
 import { Blogs, TitleBlogs } from "@/components/blogs/Blogs";
 import { PopularProductsTitle } from "@/components/popularProductsTitle/Popular";
 import { Products, Title } from "@/components/products/Products";
@@ -229,6 +230,7 @@ export default function Mens() {
   ];
   return (
     <div>
+      <Banner />
       <Title />
       <Products products={Data} />
       <PopularProductsTitle />
