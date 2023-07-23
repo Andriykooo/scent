@@ -1,0 +1,25 @@
+.Title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  h1 {
+    margin: 0 20px 0 0;
+    flex-grow: 2;
+  }
+  h2 {
+    padding-bottom: 5px;
+  }
+}
+
+.Name {
+  font-weight: 600;
+  font-size: 22px;
+  padding-top: 40px;
+}
+
+.ViewAll {
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}

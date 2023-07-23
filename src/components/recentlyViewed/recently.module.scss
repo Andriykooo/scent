@@ -1,0 +1,93 @@
+.Title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  h1 {
+    margin: 0 20px 0 0;
+    flex-grow: 2;
+  }
+}
+
+.Name {
+  font-weight: 600;
+  font-size: 22px;
+  padding-top: 40px;
+}
+
+.ProductGallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 40px;
+  flex: 1 1 auto;
+
+  a {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    strong {
+      font-size: 20px;
+      padding-top: 20px;
+      font-weight: 300;
+    }
+
+    > span {
+      padding-top: 10px;
+      color: black;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+    > .BottomTitleName {
+      font-weight: 300;
+      color: #979797;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 5px;
+    }
+    > .CostStyle {
+      justify-content: start;
+      display: inline-block;
+    }
+  }
+}
+.InfoStyle {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  font-size: 14px;
+}
+
+.WrapperGallary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Holder {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  div:first-child {
+    text-align: left;
+  }
+  div:last-child {
+    text-align: right;
+  }
+}
+
+.grayColor {
+  color: gray;
+  font-weight: 300;
+}
+.ArrowRight {
+  cursor: pointer;
+}

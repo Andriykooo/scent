@@ -1,0 +1,60 @@
+.Title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+
+  h1 {
+    margin: 0 20px 0 0;
+    flex-grow: 2;
+  }
+  h2 {
+    padding-bottom: 5px;
+  }
+}
+
+.Name {
+  font-weight: 600;
+  font-size: 22px;
+  padding-top: 40px;
+}
+
+.ViewAll {
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.PostHolder {
+  display: flex;
+  & > div:not(:last-child) {
+    margin-right: 20px;
+  }
+  img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+.CardTitle {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.ContentStyle {
+  font-weight: 300;
+  font-size: 20px;
+  width: 100%;
+  margin: 0;
+}
+
+.ReadAll {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}

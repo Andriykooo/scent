@@ -5,6 +5,21 @@ export const icons = {
   ARROW: "/icons/arrow.svg",
   CLOSE: "/icons/close.svg",
   DESIGNER: "/icons/designer.svg",
+
+  PARFUME1_ICON: "/icons/perfume1.svg",
+  PARFUME2_ICON: "/icons/perfume2.svg",
+  PARFUME3_ICON: "/icons/perfume3.svg",
+  PARFUME4_ICON: "/icons/perfume4.svg",
+  PARFUME5_ICON: "/icons/perfume5.svg",
+  HEART_OUTLINE: "/icons/heartOutline.svg",
+  HEART_FILL: "/icons/heartFill.svg",
+  STAR_ICON: "/icons/vector.svg",
+  STAR_ICON_OUTLINE: "/icons/vectorOutFill.svg",
+  ARROW_RIGHT_ICON: "/icons/rightArrow.svg",
+  ARROW_LEFT_ICON: "/icons/leftArrow.svg",
+  BLOG_IMAGE1: "/icons/image 6.svg",
+  BLOG_IMAGE2: "/icons/Rectangle 39.svg",
+  BLOG_IMAGE3: "/icons/Rectangle 104.svg",
 } as const;
 
 export const socialIcons = {
