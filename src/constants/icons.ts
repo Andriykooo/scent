@@ -4,6 +4,7 @@ export const icons = {
   SHOPPING_CART: "/icons/shopping-cart.svg",
   ARROW: "/icons/arrow.svg",
   CLOSE: "/icons/close.svg",
+  DESIGNER: "/icons/designer.svg",
 } as const;
 
 export const socialIcons = {

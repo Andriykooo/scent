@@ -1,12 +1,13 @@
 "use client";
 
-import { ChangeEvent, FC, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import styles from "./search.module.scss";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { icons } from "@/constants/icons";
 import { Icon } from "../icon/Icon";
 import { Input } from "../Input/Input";
 import { SearchResult } from "./searchResult/SearchResult";
+import { designers } from "@/mock/designers";
 
 export const Search: FC = ({}) => {
   const inputRef = useRef(null);
@@ -36,6 +37,12 @@ export const Search: FC = ({}) => {
 
   useClickOutside(inputRef, close);
 
+  const filteredDesigners = designers
+    .slice(0, 5)
+    .filter((designer) =>
+      designer.name.toLowerCase().includes(input.toLowerCase())
+    );
+
   return (
     <>
       <Icon
@@ -56,8 +63,10 @@ export const Search: FC = ({}) => {
               clear
               onCleaer={close}
             />
-            <SearchResult title="Designers" data={[]} />
-            <SearchResult title="Recent search" data={[]} />
+            {filteredDesigners.length > 0 && (
+              <SearchResult title="Designers" data={filteredDesigners} />
+            )}
+            <SearchResult title="Recent Search" data={[]} />
           </div>
         </div>
       )}

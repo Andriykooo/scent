@@ -1,5 +1,8 @@
 .search {
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: max-content;
   width: 70vw;
   background-color: var(--second-color);
   padding: 15px;
@@ -35,5 +38,6 @@
 
   & > :not(:first-child):not(:last-child) {
     border-bottom: 1px solid var(--gray-color);
+    padding-bottom: 10px;
   }
 }

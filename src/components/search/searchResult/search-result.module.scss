@@ -6,14 +6,20 @@
   }
 
   &_list {
-    margin-top: 18px;
+    margin-top: 10px;
   }
 
   &_item {
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    gap: 5px;
     width: 100%;
     color: var(--base-color);
     font-size: 20px;
     font-weight: 300;
+    border-radius: 4px;
+    cursor: pointer;
 
     &:hover {
       background-color: var(--gray-light-color);

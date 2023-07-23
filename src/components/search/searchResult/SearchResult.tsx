@@ -1,12 +1,7 @@
 import { FC } from "react";
 import styles from "./search-result.module.scss";
-import Image from "next/image";
-
-type SearhResultType = {
-  id: number;
-  name?: string;
-  image?: string;
-};
+import { Icon } from "@/components/icon/Icon";
+import { SearhResultType } from "@/types/searchResultType";
 
 type SearchResultProps = {
   data: SearhResultType[];
@@ -22,7 +17,13 @@ export const SearchResult: FC<SearchResultProps> = ({ title, data }) => {
           return (
             <li key={item.id} className={styles.search_result_item}>
               {item.image && (
-                <Image src={item.image} height={24} width={24} alt="" />
+                <Icon
+                  src={item.image}
+                  height={20}
+                  width={20}
+                  alt="product"
+                  invert
+                />
               )}
               {item.name}
             </li>
