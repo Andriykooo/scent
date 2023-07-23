@@ -1,11 +1,21 @@
 .logo {
   display: flex;
   padding: 5px 15px;
-  background-color: var(--second-color);
   border-radius: 12px;
   opacity: 1;
-  color: var(--base-color);
   font-size: 32px;
   line-height: normal;
   text-transform: uppercase;
+
+  &.base {
+    background-color: var(--second-color);
+    color: var(--base-color);
+  }
+
+  &.second {
+    background-color: var(--base-color);
+    color: var(--second-color);
+  }
+
+  
 }

@@ -2,17 +2,28 @@
 import { FC, PropsWithChildren, useState } from "react";
 import styles from "./products.module.scss";
 import Image from "next/image";
-import { icons } from "@/constants.ts/icons";
+import { icons } from "@/constants/icons";
 import { Icon } from "../icon/Icon";
 import { RatingStarts } from "../ratingStars/Rating";
 import { BuyButton } from "../buyButton/Button";
 import { subtle } from "crypto";
+
 type Product = {
+  id: number;
   image: string;
   name: string;
   isFavorite: boolean;
   price: number;
   rating: { stars: number; votes: number };
+  subTitle: string;
+  volume: number;
+  totalVolume: number;
+  remains: number;
+  sellStatus: boolean;
+};
+
+type ProductsProps = {
+  products: Array<Product>;
 };
 
 export const Title: FC = () => {
@@ -24,8 +35,12 @@ export const Title: FC = () => {
   );
 };
 
-export const Products: FC = ({ products }) => {
-  const [listIsFavorite, setListIsFavorite] = useState({});
+export const Products: FC<ProductsProps> = ({ products }) => {
+  const [listIsFavorite, setListIsFavorite] = useState<{
+    [key: string]: boolean;
+  }>({
+    0: true,
+  });
 
   const favoriteClickHandler = (id: number) => {
     setListIsFavorite((prevState) => ({

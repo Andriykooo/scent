@@ -1,7 +1,17 @@
-import { icons } from "@/constants.ts/icons";
+import { icons } from "@/constants/icons";
 import Image from "next/image";
 import { FC } from "react";
 import styles from "./blogs.module.scss";
+
+type BlogType = {
+  image: string;
+  title: string;
+  content: string;
+};
+
+type BlogsProps = {
+  posts: BlogType[];
+};
 
 export const TitleBlogs: FC = () => {
   return (
@@ -12,7 +22,7 @@ export const TitleBlogs: FC = () => {
   );
 };
 
-export const Blogs: FC = ({ posts }) => {
+export const Blogs: FC<BlogsProps> = ({ posts }) => {
   return (
     <div className={styles.PostHolder}>
       {posts.map((post) => (

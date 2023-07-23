@@ -6,11 +6,16 @@
   height: var(--header-height);
   width: 100vw;
   background-color: var(--base-color);
+  z-index: 2;
 
   &_content {
     width: 100%;
     max-width: var(--desktop-size);
     padding: 0 30px;
+
+    @media screen and (max-width: 600px) {
+      padding: 0 15px;
+    }
   }
 
   &_panel {

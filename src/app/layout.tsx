@@ -1,12 +1,12 @@
 import { Header } from "@/components/header/Header";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { Footer } from "@/components/footer/Footer";
 import { Main } from "@/components/main/Main";
 import { Preloader } from "@/components/preloder/Preloader";
 import { Provider } from "./provider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Scent",
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <Preloader />
         <Provider>
           <Header />

@@ -1,5 +1,6 @@
-"use client";
 
-export default function Home() {
-  return <div>Home</div>;
+import { Home } from "@/screens/home/Home";
+
+export default function Page() {
+  return <Home />;
 }

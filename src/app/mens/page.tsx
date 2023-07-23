@@ -7,7 +7,7 @@ import {
   RecentlyViewedTitle,
   ReviewedProducts,
 } from "@/components/recentlyViewed/Recently";
-import { icons } from "@/constants.ts/icons";
+import { icons } from "@/constants/icons";
 export default function Mens() {
   const Data = [
     {
@@ -67,7 +67,7 @@ export default function Mens() {
       image: icons.PARFUME5_ICON,
       name: "Hugo Boss Selection",
       isFavorite: true,
-      price: [""],
+      price: 44,
       rating: { stars: 5, votes: 10 },
       subTitle: "Парфумована вода",
       volume: 31,
@@ -135,7 +135,7 @@ export default function Mens() {
       image: icons.PARFUME5_ICON,
       name: "Hugo Boss Selection",
       isFavorite: true,
-      price: [""],
+      price: 65,
       rating: { stars: 5, votes: 10 },
       subTitle: "Парфумована вода",
       volume: 31,
@@ -218,7 +218,7 @@ export default function Mens() {
       image: icons.PARFUME5_ICON,
       name: "Hugo Boss Selection",
       isFavorite: true,
-      price: [""],
+      price: 44,
       rating: { stars: 5, votes: 10 },
       subTitle: "Парфумована вода",
       volume: 31,

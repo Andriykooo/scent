@@ -1,0 +1,30 @@
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &_wrapper {
+    position: relative;
+
+    &:hover {
+      .carousel_arrow {
+        opacity: 1;
+      }
+    }
+  }
+
+  &_item {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    &.full_width {
+      flex-shrink: 0;
+    }
+  }
+}

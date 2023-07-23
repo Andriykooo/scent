@@ -1,7 +1,7 @@
 "use client";
 import { FC, useState } from "react";
 import styles from "./rating.module.scss";
-import { icons } from "@/constants.ts/icons";
+import { icons } from "@/constants/icons";
 import Image from "next/image";
 interface Array<T> {
   fill(value: T): Array<T>;

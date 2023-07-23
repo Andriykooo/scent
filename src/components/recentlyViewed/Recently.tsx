@@ -1,7 +1,24 @@
-import { icons } from "@/constants.ts/icons";
+import { icons } from "@/constants/icons";
 import Image from "next/image";
 import { FC } from "react";
 import styles from "./recently.module.scss";
+
+type ReviewedProduct = {
+  image: string;
+  name: string;
+  isFavorite: boolean;
+  price: number;
+  rating: { stars: number; votes: number };
+  subTitle: string;
+  volume: number;
+  totalVolume: number;
+  remains: number;
+  sellStatus: boolean;
+};
+
+type ReviewedProductsProps = {
+  reviewedProducts: ReviewedProduct[];
+};
 
 export const RecentlyViewedTitle: FC = () => {
   return (
@@ -11,7 +28,9 @@ export const RecentlyViewedTitle: FC = () => {
   );
 };
 
-export const ReviewedProducts: FC = ({ reviewedProducts }) => {
+export const ReviewedProducts: FC<ReviewedProductsProps> = ({
+  reviewedProducts,
+}) => {
   return (
     <div className={styles.WrapperGallary}>
       <div className={styles.ArrowLeft}>
