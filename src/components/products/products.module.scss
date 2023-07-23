@@ -1,25 +1,27 @@
 .Title {
   display: flex;
-  font-weight: 900;
-  font-size: 22px;
-  width: 90%;
-  display: inline-flex;
-  padding-top: 40px;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  h1 {
+    margin: 0 20px 0 0;
+    flex-grow: 2;
+  }
+  h2 {
+    padding-bottom: 5px;
+  }
 }
 
-.UnderLine {
-  border-bottom: 2px solid black;
-  width: 89%;
+.Name {
+  font-weight: 600;
+  font-size: 22px;
+  padding-top: 40px;
 }
 
 .ViewAll {
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  justify-content: flex-end;
-  display: inline-flex;
-  text-decoration: underline 2px solid black;
-  text-underline-offset: 5.3px;
 }
 
 .ProductGallery {
@@ -27,32 +29,78 @@
   flex-direction: row;
   justify-content: space-around;
   padding-top: 40px;
+  flex: 1 1 auto;
+
+  li:hover button {
+    opacity: 1;
+  }
 
   a {
     display: flex;
     text-align: center;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
     strong {
       font-size: 20px;
       padding-top: 20px;
+      font-weight: 300;
     }
 
     > span {
       padding-top: 10px;
-      color: #000;
+      color: black;
       font-size: 15px;
       font-style: normal;
-      font-weight: 900;
+      font-weight: 600;
       line-height: normal;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       width: 100%;
+    }
+    > .BottomTitleName {
+      font-weight: 300;
+      color: #979797;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+    > .CostStyle {
+      justify-content: start;
+      display: inline-block;
     }
   }
 }
+.InfoStyle {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  font-size: 14px;
+}
 
-.redSold {
-  color: red;
+.WrapperGallary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Holder {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  div:first-child {
+    text-align: left;
+  }
+  div:last-child {
+    text-align: right;
+  }
+}
+
+.grayColor {
+  color: gray;
+  font-weight: 300;
+}
+.ArrowRight {
+  cursor: pointer;
 }

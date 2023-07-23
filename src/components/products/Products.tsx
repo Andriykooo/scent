@@ -1,141 +1,118 @@
-import { FC, PropsWithChildren } from "react";
+"use client";
+import { FC, PropsWithChildren, useState } from "react";
 import styles from "./products.module.scss";
 import Image from "next/image";
 import { icons } from "@/constants.ts/icons";
 import { Icon } from "../icon/Icon";
+import { RatingStarts } from "../ratingStars/Rating";
+import { BuyButton } from "../buyButton/Button";
+import { subtle } from "crypto";
 type Product = {
   image: string;
   name: string;
   isFavorite: boolean;
   price: number;
+  rating: { stars: number; votes: number };
 };
 
 export const Title: FC = () => {
   return (
-    <div>
-      <h1 className={styles.Title}>NEW PRODUCTS</h1>
-      <h2 className={styles.ViewAll}>View All...</h2>
+    <div className={styles.Title}>
+      <h1 className={styles.Name}>НОВI ПРОДУКТИ</h1>
+      <h2 className={styles.ViewAll}>Переглянути все...</h2>
     </div>
   );
 };
 
-export const UnderLine: FC = () => {
-  return <h3 className={styles.UnderLine}></h3>;
-};
+export const Products: FC = ({ products }) => {
+  const [listIsFavorite, setListIsFavorite] = useState({});
 
-export const Products: FC = () => {
+  const favoriteClickHandler = (id: number) => {
+    setListIsFavorite((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
+
   return (
-    <ul className={styles.ProductGallery}>
-      <li>
-        <a href="#">
-          <Image
-            src={icons.PARFUME1_ICON}
-            height={190}
-            width={190}
-            alt={"Parfums-1"}
-          />
-          <strong>Christian Dior Sauvage</strong>
-          <span>
-            <span>
-              <Icon
-                src={icons.HEART_OUTLINE}
-                height={15}
-                width={15}
-                alt={"HeartOutLine"}
+    <div className={styles.WrapperGallary}>
+      <div className={styles.ArrowLeft}>
+        <Image
+          src={icons.ARROW_LEFT_ICON}
+          height={40}
+          width={22}
+          alt={"ArrowLeft"}
+        />
+      </div>
+      <ul className={styles.ProductGallery}>
+        {products.map((item) => (
+          <li key={item.id}>
+            <a href="#">
+              <span>
+                {listIsFavorite[item.id] ? (
+                  <Image
+                    onClick={(event) => {
+                      event.preventDefault();
+                      favoriteClickHandler(item.id);
+                    }}
+                    src={icons.HEART_FILL}
+                    height={15}
+                    width={15}
+                    alt={"HeartFill"}
+                  />
+                ) : (
+                  <Image
+                    onClick={(event) => {
+                      event.preventDefault();
+                      favoriteClickHandler(item.id);
+                    }}
+                    src={icons.HEART_OUTLINE}
+                    height={15}
+                    width={15}
+                    alt={"HeartOutLine"}
+                  />
+                )}
+              </span>
+              <Image
+                src={item.image}
+                height={250}
+                width={250}
+                alt={"Parfums-1"}
               />
-            </span>
-            <span>30 UAH</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <Image
-            src={icons.PARFUME2_ICON}
-            height={190}
-            width={190}
-            alt={"Parfums-2"}
-          />
-          <strong>Bleu de Chanel </strong>
-          <span>
-            <span>
-              <Icon
-                src={icons.HEART_FILL}
-                height={15}
-                width={15}
-                alt={"HeartOutLine"}
-              />
-            </span>
-            <span>1 ml for 42 UAH</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <Image
-            src={icons.PARFUME3_ICON}
-            height={190}
-            width={190}
-            alt={"Parfums-3"}
-          />
-          <strong>Versace Eros</strong>
-          <span>
-            <span>
-              <Icon
-                src={icons.HEART_OUTLINE}
-                height={15}
-                width={15}
-                alt={"HeartOutLine"}
-              />
-            </span>
-            <span>1 ml for 36 UAH</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <Image
-            src={icons.PARFUME4_ICON}
-            height={190}
-            width={190}
-            alt={"Parfums-4"}
-          />
-          <strong>Armani CODE</strong>
-          <span>
-            <span>
-              <Icon
-                src={icons.HEART_OUTLINE}
-                height={15}
-                width={15}
-                alt={"HeartOutLine"}
-              />
-            </span>
-            <span>26 UAH</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <Image
-            src={icons.PARFUME5_ICON}
-            height={190}
-            width={190}
-            alt={"Parfums-5"}
-          />
-          <strong>Hugo Boss Selection</strong>
-          <span>
-            <span>
-              <Icon
-                src={icons.HEART_OUTLINE}
-                height={15}
-                width={15}
-                alt={"HeartOutLine"}
-              />
-            </span>
-            <span className={styles.redSold}>SOLD</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+              <strong>{item.name}</strong>
+
+              <span className={styles.BottomTitleName}> {item.subTitle}</span>
+              <div className={styles.Holder}>
+                <div>
+                  <RatingStarts />
+                  <span className={styles.CostStyle}>
+                    {item.sellStatus ? (
+                      <span className={styles.grayColor}>Продано</span>
+                    ) : (
+                      <span> {item.price} ₴ </span>
+                    )}
+                  </span>
+                </div>
+                <div className={styles.InfoStyle}>
+                  <span className={styles.grayColor}>Залишилось:</span>
+                  <span>
+                    {item.volume} | {item.totalVolume} ml
+                  </span>
+                </div>
+              </div>
+              <BuyButton />
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div className={styles.ArrowRight}>
+        <Image
+          src={icons.ARROW_RIGHT_ICON}
+          height={40}
+          width={22}
+          alt={"ArrowLeft"}
+        />
+      </div>
+    </div>
   );
 };

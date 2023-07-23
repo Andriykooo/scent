@@ -9,4 +9,11 @@ export const icons = {
   PARFUME5_ICON: "/images/icons/perfume5.svg",
   HEART_OUTLINE: "/images/icons/heartOutline.svg",
   HEART_FILL: "/images/icons/heartFill.svg",
+  STAR_ICON: "/images/icons/vector.svg",
+  STAR_ICON_OUTLINE: "/images/icons/vectorOutFill.svg",
+  ARROW_RIGHT_ICON: "/images/icons/rightArrow.svg",
+  ARROW_LEFT_ICON: "/images/icons/leftArrow.svg",
+  BLOG_IMAGE1: "/images/icons/image 6.svg",
+  BLOG_IMAGE2: "/images/icons/Rectangle 39.svg",
+  BLOG_IMAGE3: "/images/icons/Rectangle 104.svg",
 } as const;
