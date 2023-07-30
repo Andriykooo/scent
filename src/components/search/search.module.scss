@@ -5,8 +5,9 @@
   height: max-content;
   width: 70vw;
   background-color: var(--second-color);
-  padding: 15px;
-  border-radius: 0px 0px 12px 12px;
+  padding: 20px 25px;
+  margin-top: 45px;
+  border-radius: 12px;
 
   @media screen and (max-width: 600px) {
     position: fixed;
@@ -15,6 +16,7 @@
     width: 100vw;
     top: 0;
     bottom: 0;
+    margin-top: 0;
   }
 
   &_icon {
