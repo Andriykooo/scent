@@ -1,21 +1,36 @@
+import { SearhResultType } from "@/types/searchResultType";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-type MyState = {
-  bears: number;
-  addABear: () => void;
+const maxSize = 5;
+
+type SearchState = {
+  history: SearhResultType[];
+  addToHistory: (search: SearhResultType) => void;
 };
 
-export const useBearStore = create<MyState>()(
+export const useSearchStore = create<SearchState>()(
   persist(
     (set, get) => ({
-      bears: 0,
-      addABear: () => set({ bears: get().bears + 1 }),
+      history: [],
+      addToHistory: (search) => {
+        const newHistory = get().history.filter(
+          (item) => search?.id !== item.id
+        );
+
+        newHistory.unshift(search);
+
+        if (newHistory.length > maxSize) {
+          newHistory.pop();
+        }
+
+        set({ history: newHistory });
+      },
     }),
     {
       name: "recent-search",
-      storage: createJSONStorage(() => sessionStorage),
-      partialize: (state) => ({ bears: state.bears }),
+      storage: createJSONStorage(() => localStorage),
+      partialize: (state) => ({ history: state.history }),
     }
   )
 );

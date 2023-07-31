@@ -7,10 +7,17 @@ import { icons } from "@/constants/icons";
 import { Icon } from "../icon/Icon";
 import { Input } from "../Input/Input";
 import { SearchResult } from "./searchResult/SearchResult";
-import { designers } from "@/mock/designers";
+import { search } from "@/mock/search";
+import { useSearchStore } from "@/store/useSearch";
+import { SearhResultType } from "@/types/searchResultType";
+import { useRouter } from "next/navigation";
 
 export const Search: FC = ({}) => {
+  const router = useRouter();
   const inputRef = useRef(null);
+
+  const recentSearch = useSearchStore((state) => state.history);
+  const addToRecentSearch = useSearchStore((state) => state.addToHistory);
 
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -35,13 +42,32 @@ export const Search: FC = ({}) => {
     setInput(value);
   };
 
+  const handleClick = (search: SearhResultType) => {
+    addToRecentSearch(search);
+    // router.push(`${search.type}/${search.id}`);
+  };
+
   useClickOutside(inputRef, close);
 
-  const filteredDesigners = designers
-    .slice(0, 5)
-    .filter((designer) =>
-      designer.name.toLowerCase().includes(input.toLowerCase())
-    );
+  const filteredDesigners = search.reduce((accum, value) => {
+    if (
+      !value.name.toLowerCase().includes(input.toLowerCase()) ||
+      accum[value.type]?.length > 5
+    ) {
+      return accum;
+    }
+
+    if (accum[value.type]) {
+      return {
+        ...accum,
+        [value.type]: [...accum[value.type], value],
+      };
+    }
+
+    return {
+      [value.type]: [value],
+    };
+  }, {} as { [key: string]: SearhResultType[] });
 
   return (
     <>
@@ -63,10 +89,23 @@ export const Search: FC = ({}) => {
               clear
               onCleaer={close}
             />
-            {filteredDesigners.length > 0 && (
-              <SearchResult title="Designers" data={filteredDesigners} />
+            {Object.entries(filteredDesigners).map(([type, result]) => {
+              return (
+                <SearchResult
+                  key={type}
+                  title={type}
+                  data={result}
+                  onClick={handleClick}
+                />
+              );
+            })}
+            {recentSearch?.length > 0 && (
+              <SearchResult
+                title="Recent Search"
+                data={recentSearch}
+                onClick={handleClick}
+              />
             )}
-            <SearchResult title="Recent Search" data={[]} />
           </div>
         </div>
       )}
