@@ -18,6 +18,15 @@ export const icons = {
   BLOG_IMAGE1: "/icons/image 6.svg",
   BLOG_IMAGE2: "/icons/Rectangle 39.svg",
   BLOG_IMAGE3: "/icons/Rectangle 104.svg",
+  OFFER_IMAGE1: "/icons/115030_full 1.svg",
+  OFFER_IMAGE2: "/icons/127566_full 1.svg",
+  OFFER_IMAGE3: "/icons/156143_full 1.svg",
+  OFFER_IMAGE4: "/icons/156144_full 1.svg",
+  USER_ELLIPSE: "/icons/Ellipse 41.svg",
+  OFFER_IMAGE_BIG: "/icons/image_full.svg",
+  CROSS_ICON: "/icons/imagebot_2.svg",
+  SCENT_ICON: "/icons/scentIcon.jpg",
+  CHECK_ICON: "/icons/icon _circle check_.svg",
 } as const;
 
 export const socialIcons = {

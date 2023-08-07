@@ -6,7 +6,7 @@
   height: var(--header-height);
   width: 100vw;
   background-color: var(--base-color);
-  z-index: 2;
+  z-index: 9999;
 
   &_content {
     width: 100%;

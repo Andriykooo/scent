@@ -1,0 +1,65 @@
+.privateOffers {
+  h2 {
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    padding-top: 25px;
+    margin-bottom: 30px;
+  }
+}
+
+.textGrayColor {
+  color: #979797;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.offersStyles {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #979797;
+  padding: 15px;
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.Images {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      margin: 0 5px;
+    }
+  }
+}
+
+.userImage {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.starts {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
+
+.offerInfo {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.offerPrice {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  font-weight: 600;
+}

@@ -3,11 +3,10 @@ import { FC, PropsWithChildren, useState } from "react";
 import styles from "./products.module.scss";
 import Image from "next/image";
 import { icons } from "@/constants/icons";
-import { Icon } from "../icon/Icon";
 import { RatingStarts } from "../ratingStars/Rating";
 import { BuyButton } from "../buyButton/Button";
-import { subtle } from "crypto";
-
+import Link from "next/link";
+import { routes } from "@/constants/routes";
 type Product = {
   id: number;
   image: string;
@@ -16,14 +15,15 @@ type Product = {
   price: number;
   rating: { stars: number; votes: number };
   subTitle: string;
-  volume: number;
-  totalVolume: number;
+  volume?: number;
+  totalVolume?: number;
   remains: number;
   sellStatus: boolean;
 };
 
 type ProductsProps = {
   products: Array<Product>;
+  isButton?: boolean;
 };
 
 export const Title: FC = () => {
@@ -35,7 +35,16 @@ export const Title: FC = () => {
   );
 };
 
-export const Products: FC<ProductsProps> = ({ products }) => {
+export const SimilarAromatsTitle: FC = () => {
+  return (
+    <div className={styles.Title}>
+      <h1 className={styles.Name}>ПОХОЖІ ЗА АРОМАТОМ</h1>
+      <h2 className={styles.ViewAll}>Переглянути все...</h2>
+    </div>
+  );
+};
+
+export const Products: FC<ProductsProps> = ({ products, isButton = true }) => {
   const [listIsFavorite, setListIsFavorite] = useState<{
     [key: string]: boolean;
   }>({
@@ -62,7 +71,7 @@ export const Products: FC<ProductsProps> = ({ products }) => {
       <ul className={styles.ProductGallery}>
         {products.map((item) => (
           <li key={item.id}>
-            <a href="#">
+            <Link href={routes.PRODUCT}>
               <span>
                 {listIsFavorite[item.id] ? (
                   <Image
@@ -95,7 +104,6 @@ export const Products: FC<ProductsProps> = ({ products }) => {
                 alt={"Parfums-1"}
               />
               <strong>{item.name}</strong>
-
               <span className={styles.BottomTitleName}> {item.subTitle}</span>
               <div className={styles.Holder}>
                 <div>
@@ -109,14 +117,19 @@ export const Products: FC<ProductsProps> = ({ products }) => {
                   </span>
                 </div>
                 <div className={styles.InfoStyle}>
-                  <span className={styles.grayColor}>Залишилось:</span>
-                  <span>
-                    {item.volume} | {item.totalVolume} ml
-                  </span>
+                  {item.volume && item.totalVolume && (
+                    <>
+                      <span className={styles.grayColor}>Залишилось:</span>
+                      <span>
+                        {item.volume} | {item.totalVolume} ml
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
-              <BuyButton />
-            </a>
+
+              {isButton && <BuyButton />}
+            </Link>
           </li>
         ))}
       </ul>

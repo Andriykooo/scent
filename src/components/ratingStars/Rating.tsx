@@ -37,8 +37,8 @@ export const RatingStarts: FC = () => {
                 RatingAssessment(index);
               }}
               src={isActive ? icons.STAR_ICON : icons.STAR_ICON_OUTLINE}
-              height={13}
-              width={13}
+              height={10}
+              width={10}
               alt={isActive ? "StarFill" : "StarOutline"}
             />
           </span>

@@ -1,0 +1,30 @@
+.popUp {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: rgb(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 5px;
+  height: 100vh;
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border: none;
+  margin: 0;
+}
+
+.gallaryHolder {
+  padding-left: 30px;
+  padding-right: 30px;
+}
