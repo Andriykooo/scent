@@ -9,6 +9,7 @@ import {
   ReviewedProducts,
 } from "@/components/recentlyViewed/Recently";
 import { icons } from "@/constants/icons";
+
 export default function Mens() {
   const Data = [
     {
