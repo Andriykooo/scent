@@ -6,6 +6,7 @@ import { ValueOf } from "../utils/valueOf";
 import { Montserrat } from "next/font/google";
 import { icons } from "@/constants/icons";
 import { Icon } from "../icon/Icon";
+import { Spinner } from "../loading/spinner/Spinner";
 
 type InputProps = {
   value?: string;
@@ -16,6 +17,7 @@ type InputProps = {
   variant?: ValueOf<typeof variants>;
   clear?: boolean;
   onCleaer?: Function;
+  loading?: boolean;
 };
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -29,6 +31,7 @@ export const Input: FC<InputProps> = ({
   variant = variants.BASE,
   clear,
   onCleaer,
+  loading,
 }) => {
   const handleClear = () => {
     onChange?.("");
@@ -56,7 +59,12 @@ export const Input: FC<InputProps> = ({
         placeholder={placeholder}
         type={type}
       />
-      {clear && (
+      {loading && (
+        <div className={styles.input_spinner_wrapper}>
+          <Spinner className={styles.input_spinner} />
+        </div>
+      )}
+      {!loading && clear && (
         <Icon
           src={icons.CLOSE}
           height={12}

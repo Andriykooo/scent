@@ -17,7 +17,7 @@
 
   &.base {
     color: var(--base-color);
-    border-bottom: 1px solid var(--base-color);
+    border-bottom: 1px solid var(--gray-color);
   }
 
   &.second {
@@ -29,6 +29,11 @@
     position: relative;
   }
 
+  &_spinner {
+    font-size: 0.1em;
+  }
+
+  &_spinner_wrapper,
   &_clear {
     position: absolute;
     right: 0;

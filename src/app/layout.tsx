@@ -2,7 +2,7 @@ import { Header } from "@/components/header/Header";
 import { Montserrat } from "next/font/google";
 import { Footer } from "@/components/footer/Footer";
 import { Main } from "@/components/main/Main";
-import { Preloader } from "@/components/preloder/Preloader";
+import { Preloader } from "@/components/loading/preloder/Preloader";
 import { Provider } from "./provider";
 import "./globals.css";
 

@@ -1,8 +1,7 @@
 "use client";
 
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import styles from "./search.module.scss";
-import { useClickOutside } from "@/hooks/useClickOutside";
 import { icons } from "@/constants/icons";
 import { Icon } from "../icon/Icon";
 import { Input } from "../Input/Input";
@@ -10,17 +9,22 @@ import { SearchResult } from "./searchResult/SearchResult";
 import { search } from "@/mock/search";
 import { useSearchStore } from "@/store/useSearch";
 import { SearhResultType } from "@/types/searchResultType";
-import { useRouter } from "next/navigation";
+import { Modal } from "../modal/Modal";
+import { capitalize } from "../utils/capitalize";
+import { useDebounce } from "@/hooks/useDebounce";
 
 export const Search: FC = ({}) => {
-  const router = useRouter();
-  const inputRef = useRef(null);
-
   const recentSearch = useSearchStore((state) => state.history);
   const addToRecentSearch = useSearchStore((state) => state.addToHistory);
 
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [isLodaing, setIsLoading] = useState(false);
+  const [searchResult, setSearchResult] = useState<{
+    [key: string]: SearhResultType[];
+  }>({});
+
+  const debounceInput = useDebounce<string>(input, 500);
 
   const open = () => {
     setIsOpen(true);
@@ -44,30 +48,39 @@ export const Search: FC = ({}) => {
 
   const handleClick = (search: SearhResultType) => {
     addToRecentSearch(search);
-    // router.push(`${search.type}/${search.id}`);
   };
 
-  useClickOutside(inputRef, close);
+  const fetchSearchData = () => {
+    return search.reduce((accum, value) => {
+      if (
+        !value.name.toLowerCase().includes(input.toLowerCase()) ||
+        accum[value.type]?.length > 5
+      ) {
+        return accum;
+      }
 
-  const filteredDesigners = search.reduce((accum, value) => {
-    if (
-      !value.name.toLowerCase().includes(input.toLowerCase()) ||
-      accum[value.type]?.length > 5
-    ) {
-      return accum;
-    }
+      if (accum[value.type]) {
+        return {
+          ...accum,
+          [value.type]: [...accum[value.type], value],
+        };
+      }
 
-    if (accum[value.type]) {
       return {
-        ...accum,
-        [value.type]: [...accum[value.type], value],
+        [value.type]: [value],
       };
-    }
+    }, {} as { [key: string]: SearhResultType[] });
+  };
 
-    return {
-      [value.type]: [value],
-    };
-  }, {} as { [key: string]: SearhResultType[] });
+  useEffect(() => {
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setSearchResult(fetchSearchData());
+
+      setIsLoading(false);
+    }, 500);
+  }, [debounceInput]);
 
   return (
     <>
@@ -79,36 +92,35 @@ export const Search: FC = ({}) => {
         onClick={toggle}
         className={styles.search_icon}
       />
-      {isOpen && (
-        <div className={styles.search_wrapper}>
-          <div ref={inputRef} className={styles.search}>
-            <Input
-              placeholder="Search..."
-              value={input}
-              onChange={handleChange}
-              clear
-              onCleaer={close}
-            />
-            {Object.entries(filteredDesigners).map(([type, result]) => {
-              return (
-                <SearchResult
-                  key={type}
-                  title={type}
-                  data={result}
-                  onClick={handleClick}
-                />
-              );
-            })}
-            {recentSearch?.length > 0 && (
+      <Modal isOpen={isOpen} close={close}>
+        <div className={styles.search}>
+          <Input
+            placeholder="Search..."
+            value={input}
+            onChange={handleChange}
+            clear
+            onCleaer={close}
+            loading={isLodaing}
+          />
+          {Object.entries(searchResult).map(([type, result]) => {
+            return (
               <SearchResult
-                title="Recent Search"
-                data={recentSearch}
+                key={type}
+                title={capitalize(type)}
+                data={result}
                 onClick={handleClick}
               />
-            )}
-          </div>
+            );
+          })}
+          {recentSearch?.length > 0 && (
+            <SearchResult
+              title="Recent Search"
+              data={recentSearch}
+              onClick={handleClick}
+            />
+          )}
         </div>
-      )}
+      </Modal>
     </>
   );
 };
