@@ -27,6 +27,8 @@ export const icons = {
   CROSS_ICON: "/icons/imagebot_2.svg",
   SCENT_ICON: "/icons/scentIcon.jpg",
   CHECK_ICON: "/icons/icon _circle check_.svg",
+  ARROW_LEFT_BLACK_ICON: "/icons/arrow_left_Black.svg",
+  ARROW_RIGHT_GRAY_ICON: "/icons/arrow_right_gray.svg",
 } as const;
 
 export const socialIcons = {

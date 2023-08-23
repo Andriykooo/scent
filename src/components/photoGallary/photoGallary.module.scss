@@ -1,0 +1,73 @@
+.containerImage .show {
+  display: block;
+}
+.containerImage .hide {
+  display: none;
+}
+.containerImage {
+  // width: 80%;
+  position: relative;
+  border-radius: 15px;
+
+  img {
+    border-radius: 3px;
+  }
+  img {
+    &.show {
+      display: block;
+    }
+    &.hide {
+      display: none;
+    }
+  }
+}
+.swipeLeft {
+  margin-top: -20px;
+  left: -60px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  .active {
+    color: black;
+  }
+}
+
+.swipeRight {
+  margin-top: -20px;
+  right: -60px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  bottom: -30px;
+}
+.rectangle {
+  height: 10px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  width: 10px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rectangleActive {
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: black;
+}

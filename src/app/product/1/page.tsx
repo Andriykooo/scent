@@ -5,6 +5,7 @@ import {
   FeedBack,
   FeedBackProductsProps,
 } from "@/components/feedback/Feedback";
+import { FeedBackPagesNumber } from "@/components/numbersPageFeedBack/NumbersPage";
 import {
   PrivateOffers,
   PrivateOffersProps,
@@ -149,9 +150,9 @@ export default function ProductPage() {
         ],
         imagesGallary: [
           icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
+          icons.PARFUME1_ICON,
+          icons.PARFUME2_ICON,
+          icons.PARFUME3_ICON,
         ],
         userEllipse: icons.USER_ELLIPSE,
         price: 42,
@@ -170,10 +171,10 @@ export default function ProductPage() {
           icons.OFFER_IMAGE4,
         ],
         imagesGallary: [
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
+          icons.PARFUME5_ICON,
+          icons.PARFUME1_ICON,
+          icons.PARFUME2_ICON,
+          icons.PARFUME3_ICON,
         ],
         userEllipse: icons.USER_ELLIPSE,
         price: 42,
@@ -192,10 +193,10 @@ export default function ProductPage() {
           icons.OFFER_IMAGE4,
         ],
         imagesGallary: [
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
+          icons.PARFUME5_ICON,
+          icons.PARFUME1_ICON,
+          icons.PARFUME2_ICON,
+          icons.PARFUME3_ICON,
         ],
         userEllipse: icons.USER_ELLIPSE,
         price: 42,
@@ -214,10 +215,10 @@ export default function ProductPage() {
           icons.OFFER_IMAGE4,
         ],
         imagesGallary: [
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
+          icons.PARFUME5_ICON,
+          icons.PARFUME1_ICON,
+          icons.PARFUME2_ICON,
+          icons.PARFUME3_ICON,
         ],
         userEllipse: icons.USER_ELLIPSE,
         price: 42,
@@ -236,10 +237,10 @@ export default function ProductPage() {
           icons.OFFER_IMAGE4,
         ],
         imagesGallary: [
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
-          icons.OFFER_IMAGE_BIG,
+          icons.PARFUME5_ICON,
+          icons.PARFUME1_ICON,
+          icons.PARFUME2_ICON,
+          icons.PARFUME3_ICON,
         ],
         userEllipse: icons.USER_ELLIPSE,
         price: 42,
@@ -462,13 +463,14 @@ export default function ProductPage() {
   ];
   return (
     <div>
-      <BreadCrumbs />
+      <BreadCrumbs breadCrumbsPass="MEN'S FRAGRANCES/CHRISTIAN DIOR/SAUVAGE" />
       <Product {...Data} />
       <RateProducts {...DataRating} />
       <PrivateOffers {...DataPrivateOffers} />
       <SimilarAromatsTitle />
       <Products products={DataSimilarAromats} isButton={false}></Products>
       <FeedBack {...DataFeedBackComments} />
+      <FeedBackPagesNumber />
       <RecentlyViewedTitle />
       <ReviewedProducts reviewedProducts={DataRecentlyViewed} />
     </div>

@@ -116,7 +116,7 @@
 
 .userData {
   padding-right: 10px;
-  width: 135px;
+  width: 350px;
   flex-shrink: 0;
   > div {
     display: flex;
@@ -127,7 +127,7 @@
 }
 
 .data {
-  width: 350px;
+  // width: 350px;
   flex-shrink: 0;
 
   span {

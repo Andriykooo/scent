@@ -3,6 +3,7 @@ import { Popup } from "reactjs-popup";
 import styles from "./popUp.module.scss";
 import Image from "next/image";
 import { icons } from "@/constants/icons";
+import { PhotoGallery } from "../photoGallary/PhotoGallary";
 
 type PopUpProps = {
   trigerButtonContent: string | ReactNode | Element;
@@ -25,26 +26,9 @@ export const PopupExample: React.FC<PopUpProps> = ({
           }}
           className={styles.content}
         >
-          <Image
-            src={icons.ARROW_LEFT_ICON}
-            height={32}
-            width={40}
-            alt={"Arrow"}
-          />
           <div className={styles.gallaryHolder}>
-            <Image
-              src={imagesGallary[0]}
-              height={425}
-              width={425}
-              alt={"Product"}
-            />
+            <PhotoGallery photos={imagesGallary} currentIndex={0} />
           </div>
-          <Image
-            src={icons.ARROW_RIGHT_ICON}
-            height={32}
-            width={40}
-            alt={"Arrow"}
-          />
         </div>
       </div>
     )}

@@ -101,21 +101,23 @@ export const FeedBack: FC<FeedBackProductsProps> = (feedBack) => {
                       width={50}
                       alt={"UserImage"}
                     ></Image>
-                    <div className={styles.userName}>{item.user.name}</div>
+
+                    <div className={styles.data}>
+                      <div className={styles.userName}>{item.user.name}</div>
+                      <span>{item.data}</span>
+                      <span>
+                        <Image
+                          src={icons.CHECK_ICON}
+                          height={10}
+                          width={10}
+                          alt={"CheckIcon"}
+                        ></Image>
+                        {item.saleStatus}
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <div className={styles.data}>
-                  <span>{item.data}</span>
-                  <span>
-                    <Image
-                      src={icons.CHECK_ICON}
-                      height={10}
-                      width={10}
-                      alt={"CheckIcon"}
-                    ></Image>
-                    {item.saleStatus}
-                  </span>
-                </div>
+
                 <div className={styles.feedBackCommentContent}>
                   <div className={styles.comment}>
                     <div className={styles.userHolder}>
