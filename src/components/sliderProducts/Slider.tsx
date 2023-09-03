@@ -58,8 +58,10 @@ const SliderDot = (props: SliderProps) => {
   } = props;
 
   const [enable, setEnable] = React.useState(false);
-  const [positionCursorPercentage, setPositionCursorPercentage] =
-    React.useState(value ? ((value - min) / (max - min)) * 100 : 0);
+  const [
+    positionCursorPercentage,
+    setPositionCursorPercentage,
+  ] = React.useState(value ? ((value - min) / (max - min)) * 100 : 0);
   const [positionCursor, setPositionCursor] = React.useState(
     value ? value : min
   );
