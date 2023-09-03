@@ -10,7 +10,7 @@ import {
   PrivateOffers,
   PrivateOffersProps,
 } from "@/components/privateOffers/PrivateOffers";
-import { Product } from "@/components/productComponent/ProductGallary";
+import { Product } from "@/components/productComponent/ProductComponentGallary";
 import { Products, SimilarAromatsTitle } from "@/components/products/Products";
 import {
   RateProducts,

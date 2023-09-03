@@ -5,4 +5,11 @@ export const routes = {
   WOMAN: "/woman",
   PRODUCT: "/product/1",
   PROFILE: "/profile",
+  PROFILE_MY_PRODUCT: "/profile/myProducts",
+  PROFILE_ORDERS: "/profile/orders",
+  PROFILE_WISH_LIST: "/profile/wishList",
+  PROFILE_REVIEWED_GOODS: "/profile/reviewedGoods",
+  PROFILE_CHAT_WITH_USER: "/profile/chatWithUser",
+  PROFILE_MY_REVIEWS: "/profile/reviews",
+  PROFILE_WALLET: "/profile/wallet",
 } as const;

@@ -29,6 +29,12 @@ export const icons = {
   CHECK_ICON: "/icons/icon _circle check_.svg",
   ARROW_LEFT_BLACK_ICON: "/icons/arrow_left_Black.svg",
   ARROW_RIGHT_GRAY_ICON: "/icons/arrow_right_gray.svg",
+  ADD_ICON: "/icons/add 1.svg",
+  ARROW_DOWN_ICON: "/icons/arrow_down.svg",
+  REMOVE_ICON: "/icons/remove 1.svg",
+  WAITING_ICON: "/icons/🦆 icon _pie chart 25_.svg",
+  CANCEL_ICON: "/icons/cancel.svg",
+  SUCCESS_ICON: "/icons/success.svg",
 } as const;
 
 export const socialIcons = {

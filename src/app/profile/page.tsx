@@ -5,6 +5,7 @@ import { icons } from "@/constants/icons";
 import React from "react";
 import styles from "./profile.module.scss";
 import Image from "next/image";
+import { ProfileMenu } from "@/components/profileMenu/profileMenu";
 
 export default function ProfilePage() {
   return (
@@ -22,31 +23,7 @@ export default function ProfilePage() {
               ></Image>
               <span>tizary777</span>
             </div>
-            <div className={styles.navigation}>
-              <ul>
-                <li>
-                  <a href="">Мої продукти</a>
-                </li>
-                <li>
-                  <a href="">Замовлення</a>
-                </li>
-                <li>
-                  <a href="">Список побажань</a>
-                </li>
-                <li>
-                  <a href="">Переглянуті товари</a>
-                </li>
-                <li>
-                  <a href="">Чат з користувачем</a>
-                </li>
-                <li>
-                  <a href="">Мої відгуки</a>
-                </li>
-                <li>
-                  <a href="">Гаманець</a>
-                </li>
-              </ul>
-            </div>
+            <ProfileMenu />
           </div>
           <div className={styles.content}>
             <div className={styles.title}>
