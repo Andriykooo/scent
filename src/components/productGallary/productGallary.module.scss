@@ -1,0 +1,80 @@
+.ProductGallery {
+  .removeIcon {
+    opacity: 0;
+  }
+  &:hover .removeIcon {
+    opacity: 1;
+  }
+  &:hover button {
+    opacity: 1;
+  }
+  li button {
+    opacity: 0;
+  }
+  li:hover button {
+    opacity: 1;
+  }
+
+  strong {
+    font-size: 20px;
+    padding-top: 20px;
+    font-weight: 400;
+  }
+
+  > span {
+    padding-top: 10px;
+    color: black;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  > .BottomTitleName {
+    font-weight: 300;
+    color: #979797;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  > .CostStyle {
+    justify-content: start;
+    display: inline-block;
+    font-weight: 600;
+  }
+}
+.InfoStyle {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  font-size: 14px;
+}
+
+.WrapperGallary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Holder {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  div:first-child {
+    text-align: left;
+  }
+  div:last-child {
+    text-align: right;
+  }
+}
+
+.grayColor {
+  color: gray;
+  font-weight: 300;
+}
+.ArrowRight {
+  cursor: pointer;
+}
