@@ -3,6 +3,8 @@ export const icons = {
   USER_ICON: "/icons/user-icon.svg",
   SHOPPING_CART: "/icons/shopping-cart.svg",
   ARROW: "/icons/arrow.svg",
+  CLOSE: "/icons/close.svg",
+  DESIGNER: "/icons/designer.svg",
 
   PARFUME1_ICON: "/icons/perfume1.svg",
   PARFUME2_ICON: "/icons/perfume2.svg",

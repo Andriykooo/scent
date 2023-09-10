@@ -1,5 +1,7 @@
+"use client";
+
 import { FC } from "react";
-import { Logo } from "../logo/Logo";
+import { Logo } from "../../logo/Logo";
 import styles from "./preloader.module.scss";
 
 export const Preloader: FC = () => {
