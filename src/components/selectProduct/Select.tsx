@@ -8,6 +8,4 @@ const options = [
   { value: "150", label: "150 ml" },
 ];
 
-export const CustomSelect: FC = () => (
-  <Select className={styles.customSelect} options={options} />
-);
+export const CustomSelect: FC = () => null;

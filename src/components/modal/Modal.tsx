@@ -6,12 +6,16 @@ import classNames from "classnames";
 type ModalProps = {
   isOpen: boolean;
   close: () => void;
+  position?: "center" | "top";
+  className?: string;
 };
 
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   children,
   isOpen,
   close,
+  position = "top",
+  className,
 }) => {
   const modalRef = useRef(null);
   const [innerIsOpen, setInnerIsOpen] = useState(isOpen);
@@ -44,7 +48,10 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
       })}
       onAnimationEnd={handleAnimationEnd}
     >
-      <div ref={modalRef} className={styles.modal}>
+      <div
+        ref={modalRef}
+        className={classNames(styles.modal, className, styles[position])}
+      >
         {children}
       </div>
     </div>

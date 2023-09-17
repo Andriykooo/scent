@@ -1,11 +1,12 @@
 "use client";
 import styles from "./privateOffers.module.scss";
-import { FC, ReactNode } from "react";
+import { FC, useState } from "react";
 import { icons } from "@/constants/icons";
 import Image from "next/image";
 import { RatingStarts } from "../ratingStars/Rating";
-import styled from "@emotion/styled";
-import { PopupExample } from "../popUp/PopUp";
+import { PhotoGallery } from "../photoGallary/PhotoGallary";
+import { Modal } from "../modal/Modal";
+
 type OffersProducts = {
   id: number;
   rating: { stars: number; votes: number };
@@ -22,6 +23,40 @@ type OffersProducts = {
 export type PrivateOffersProps = {
   title: string;
   productList: OffersProducts[];
+};
+
+type ProductPhoto = {
+  image: string;
+  images: string[];
+  index: number;
+};
+
+const ProductPhoto: FC<ProductPhoto> = ({ image, images, index }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <Image
+        src={image}
+        height={50}
+        width={50}
+        alt="product"
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      />
+      <Modal
+        isOpen={isOpen}
+        close={() => {
+          setIsOpen(false);
+        }}
+        position="center"
+        className={styles.photoGallary}
+      >
+        <PhotoGallery photos={images} currentIndex={index} />
+      </Modal>
+    </>
+  );
 };
 
 export const PrivateOffers: FC<PrivateOffersProps> = (offers) => {
@@ -46,9 +81,10 @@ export const PrivateOffers: FC<PrivateOffersProps> = (offers) => {
             <ul>
               {item.images.map((image, index) => (
                 <li key={index}>
-                  <PopupExample
-                    trigerButtonContent={<img src={image} />}
-                    imagesGallary={item.imagesGallary}
+                  <ProductPhoto
+                    image={image}
+                    images={item.images}
+                    index={index}
                   />
                 </li>
               ))}

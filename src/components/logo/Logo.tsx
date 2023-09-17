@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import { routes } from "@/constants/routes";
 import { Righteous } from "next/font/google";
-import { ValueOf } from "../utils/valueOf";
+import { ValueOf } from "../../utils/valueOf";
 import { variants } from "@/constants/variants";
 
 const righteous = Righteous({ weight: "400", subsets: ["latin"] });
