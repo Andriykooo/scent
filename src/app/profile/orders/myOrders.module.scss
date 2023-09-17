@@ -1,0 +1,96 @@
+.bar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.userEllipse {
+  border-bottom: 1px solid #979797;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  span {
+    padding-left: 10px;
+  }
+}
+.wrapper {
+  display: flex;
+}
+
+.content {
+  min-height: 100vh;
+  border-left: 1px solid #979797;
+  flex-grow: 1;
+}
+
+.container {
+  padding-top: 55px;
+}
+
+.myProductsHeader {
+  margin-left: 20px;
+  min-height: 51px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #979797;
+}
+.myProductsWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.productWrapper {
+  padding-top: 5px;
+  gap: 40px;
+  row-gap: 5px;
+  padding-left: 20px;
+}
+
+.orderList {
+  li {
+    padding-bottom: 30px;
+    gap: 48px;
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      flex-grow: 1;
+    }
+    li {
+      display: block;
+      & > div {
+        width: 21.66%;
+        text-align: center;
+        display: inline-block;
+
+        &:first-child {
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+
+.orderItem {
+  padding-top: 25px;
+  border-bottom: 1px solid #979797;
+}
+
+.grayTextColor {
+  color: #979797;
+  font-size: 14px;
+}
+
+.textStyles {
+  font-size: 16px;
+  display: flex;
+  gap: 5px;
+}
+.UserTextStyles {
+  font-size: 16px;
+  width: 130px;
+}
+
+.ProductNameTextStyles {
+  font-size: 16px;
+  width: 130px;
+}

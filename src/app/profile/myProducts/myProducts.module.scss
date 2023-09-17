@@ -1,0 +1,73 @@
+.bar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.userEllipse {
+  border-bottom: 1px solid #979797;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  span {
+    padding-left: 10px;
+  }
+}
+.wrapper {
+  display: flex;
+}
+
+.content {
+  min-height: 100vh;
+  border-left: 1px solid #979797;
+  flex-grow: 1;
+}
+
+.container {
+  padding-top: 55px;
+}
+
+.personalDataStyles {
+  gap: 80px;
+}
+
+.myProductsHeader {
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #979797;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  align-items: center;
+  h1 {
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  h2 {
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+.myProductsWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.fillterStyles {
+  display: flex;
+  align-items: center;
+}
+
+.productWrapper {
+  gap: 40px;
+  row-gap: 5px;
+  display: flex;
+  padding-left: 20px;
+  flex-wrap: wrap;
+  & > div {
+    flex: 0 0 5%;
+  }
+}

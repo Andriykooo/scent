@@ -10,17 +10,17 @@ import { routes } from "@/constants/routes";
 const menuList = [
   {
     id: 1,
-    name: "Men's",
+    name: "БРЕНДИ",
     path: routes.MENS,
   },
   {
     id: 2,
-    name: "Fragrance world",
+    name: "СВІТ ПАРФУМЕРІЇ",
     path: routes.FRAGRANCE_WORLD,
   },
   {
     id: 3,
-    name: "WOMEN'S FRAGRANCES",
+    name: "БЛОГИ",
     path: routes.WOMAN,
   },
 ];

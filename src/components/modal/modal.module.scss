@@ -6,14 +6,21 @@
   width: 70vw;
   background-color: var(--second-color);
   padding: 20px 25px;
-  margin-top: 45px;
   border-radius: 12px;
   box-shadow: rgba(67, 77, 91, 0.2) 0px 4px 20px;
-  animation: scale 0.2s ease;
-
+  position: fixed;
   max-height: calc(100vh - 85px);
   overflow: auto;
   position: relative;
+
+  &.top {
+    top: 45px;
+  }
+
+  &.center {
+    top: calc(50%);
+    transform: translateY(-50%);
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -69,15 +76,5 @@
 
   to {
     opacity: 0;
-  }
-}
-
-@keyframes scale {
-  from {
-    transform: scale(0.9);
-  }
-
-  to {
-    transform: scale(1);
   }
 }

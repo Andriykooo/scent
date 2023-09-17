@@ -1,0 +1,75 @@
+.containerImage .show {
+  display: block;
+}
+.containerImage .hide {
+  display: none;
+}
+.containerImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 15px;
+  height: 100%;
+  padding-bottom: 20px;
+
+  img {
+    border-radius: 3px;
+  }
+  img {
+    &.show {
+      display: block;
+    }
+    &.hide {
+      display: none;
+    }
+  }
+}
+.swipeLeft {
+  left: 10px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  .active {
+    color: black;
+  }
+}
+
+.swipeRight {
+  right: 10px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  bottom: -20px;
+}
+.rectangle {
+  height: 10px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  width: 10px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rectangleActive {
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: black;
+}

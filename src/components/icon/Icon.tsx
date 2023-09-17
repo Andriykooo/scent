@@ -4,7 +4,7 @@ import styles from "./icon.module.scss";
 import { useTheme } from "next-themes";
 import { themes } from "@/constants/themes";
 import classNames from "classnames";
-import { ValueOf } from "../utils/valueOf";
+import { ValueOf } from "@/utils/valueOf";
 
 const invertSwitch = {
   [themes.LIGHT]: themes.DARK,

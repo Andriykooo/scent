@@ -1,0 +1,187 @@
+.content {
+  background-color: white;
+  width: 100%;
+  border-radius: 12px;
+  padding: 30px;
+  position: relative;
+  row-gap: 35px;
+}
+
+.button {
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  padding: 10px 60px;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 40px;
+  margin-top: 10px;
+  display: flex;
+  margin: 10px auto;
+}
+
+.gallaryHolder {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.titleName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 100px;
+  padding-bottom: 25px;
+}
+
+.textStyles {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.textArea {
+  resize: none;
+  width: 780px;
+  height: 170px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  border-color: white;
+  font-family: Mulish;
+}
+
+.buttonClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+}
+
+.insideButton {
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  padding: 10px 60px;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 40px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.feedBackComments {
+  .feedBackStyleBox:last-child {
+    border-bottom: 1px solid #979797;
+  }
+}
+
+.feedBackStyles {
+  display: flex;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  border-top: 1px solid #979797;
+}
+
+.userData {
+  padding-right: 10px;
+  width: 350px;
+  flex-shrink: 0;
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: -15px;
+  }
+}
+
+.data {
+  // width: 350px;
+  flex-shrink: 0;
+
+  span {
+    display: block;
+    color: #979797;
+    font-size: 14px;
+  }
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.comment {
+  display: flex;
+  font-size: 14px;
+  width: 100%;
+}
+
+.expertStyles {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+  .userHolder {
+    margin-top: -82px;
+  }
+  .answer a {
+    border-bottom: solid 1px #979797;
+  }
+}
+
+.favoriteStyles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 75px;
+}
+
+.feedBackCommentContent {
+  font-size: 14px;
+}
+
+.contentBox {
+  p {
+    margin: 0 0 10px;
+  }
+  > div {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+.userHolder {
+  display: flex;
+  width: 160px;
+  flex-shrink: 0;
+  text-align: right;
+  justify-content: end;
+  margin-right: 5px;
+  img {
+    align-items: center;
+  }
+  > em {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+  }
+}
+
+.answer {
+  font-size: 14px;
+  color: #979797;
+  a {
+    position: relative;
+  }
+
+  a:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 12px;
+    background-color: white;
+    right: 100%;
+    top: 100%;
+  }
+}

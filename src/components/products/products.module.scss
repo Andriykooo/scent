@@ -30,7 +30,9 @@
   justify-content: space-around;
   padding-top: 40px;
   flex: 1 1 auto;
-
+  li button {
+    opacity: 0;
+  }
   li:hover button {
     opacity: 1;
   }

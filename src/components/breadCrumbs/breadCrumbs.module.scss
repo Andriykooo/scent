@@ -1,0 +1,14 @@
+.textStyle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+}
+
+.fontStyle {
+  color: #979797;
+  font-size: 20px;
+  font-weight: 600;
+  span {
+    border-bottom: solid 1px black;
+  }
+}

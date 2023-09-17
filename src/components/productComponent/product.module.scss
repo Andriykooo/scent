@@ -1,0 +1,89 @@
+.product {
+  display: flex;
+  border-bottom: 1px solid #979797;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  & > div:not(:last-child) {
+    margin-right: 60px;
+  }
+  margin-top: 55px;
+}
+
+.characteristic {
+  flex-direction: column;
+}
+
+.galleryHolder {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.nameTextStyles {
+  font-weight: 300;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.checkoutStyles {
+  font-size: 32px;
+  flex-shrink: 0;
+  flex-basis: 330px;
+  strong {
+    display: block;
+  }
+  button {
+    display: block;
+    width: 100%;
+  }
+}
+
+.productDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 27px;
+}
+
+.textStyles {
+  font-weight: 600;
+}
+
+.grayColor {
+  color: #979797;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-end;
+  strong {
+    font-weight: 400;
+  }
+}
+
+.buttonUpperText {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productCode {
+  color: #979797;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 70%;
+  strong {
+    font-weight: 400;
+  }
+}
+
+.ArrowRight {
+  cursor: pointer;
+}

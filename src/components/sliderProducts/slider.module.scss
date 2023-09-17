@@ -1,0 +1,63 @@
+.lineStyled {
+  height: 10px;
+  background-color: #d9d9d9;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.lineFill {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.dotStyled {
+  all: unset;
+  z-index: 1;
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #e3e3e3;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.marksStyled {
+  z-index: 10;
+  position: absolute;
+  height: 8px;
+  width: 2px;
+  background-color: #e3e3e3cd;
+  left: 10%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.marksText {
+  position: absolute;
+  bottom: 15px;
+  transform: translate(-50%, 0);
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.sliderStyles {
+  width: 0px;
+  background-color: #d9d9d9;
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid white;
+  border-radius: 5px;
+}

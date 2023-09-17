@@ -1,0 +1,16 @@
+.pageNumberWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  span:hover {
+    color: black;
+  }
+}
+
+.textColorStyles {
+  color: #979797;
+}
