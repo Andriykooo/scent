@@ -5,9 +5,13 @@
   display: none;
 }
 .containerImage {
-  // width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   border-radius: 15px;
+  height: 100%;
+  padding-bottom: 20px;
 
   img {
     border-radius: 3px;
@@ -22,8 +26,7 @@
   }
 }
 .swipeLeft {
-  margin-top: -20px;
-  left: -60px;
+  left: 10px;
   width: 40px;
   position: absolute;
   top: 50%;
@@ -34,8 +37,7 @@
 }
 
 .swipeRight {
-  margin-top: -20px;
-  right: -60px;
+  right: 10px;
   width: 40px;
   position: absolute;
   top: 50%;
@@ -50,7 +52,7 @@
   align-items: center;
   width: 100%;
   display: flex;
-  bottom: -30px;
+  bottom: -20px;
 }
 .rectangle {
   height: 10px;

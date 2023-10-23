@@ -4,8 +4,8 @@ import classNames from "classnames";
 import { FC, ReactNode, useEffect, useState } from "react";
 import { useSnapCarousel } from "react-snap-carousel";
 import styles from "./carousel.module.scss";
-import { Arrow } from "./components/arrow/Arrow";
-import { Dots } from "./components/dots/Dots";
+import { Dots } from "./dots/Dots";
+import { Arrow } from "./arrow/Arrow";
 
 type CatouselItemType = {
   id: number;

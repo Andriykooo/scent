@@ -32,50 +32,35 @@ interface SliderProps {
   defaultValue?: number;
   marks?: Marks;
   tooltipVisible?: boolean;
-  step?: number;
+  step: number;
   vertical?: boolean;
-  min?: number;
-  max?: number;
+  min: number;
+  max: number;
   unit?: string;
 }
 
 const SliderDot = (props: SliderProps) => {
-  const {
-    style,
-    className,
-    theme,
-    onChange,
-    value,
-    marks,
-    tooltipVisible,
-    step,
-    vertical,
-    min,
-    max,
-    unit,
-    unFocusColor,
-    focusColor,
-  } = props;
+  const { style, onChange, value, step, vertical, min, max } = props;
 
   const [enable, setEnable] = React.useState(false);
-  const [
-    positionCursorPercentage,
-    setPositionCursorPercentage,
-  ] = React.useState(value ? ((value - min) / (max - min)) * 100 : 0);
+  const [positionCursorPercentage, setPositionCursorPercentage] =
+    React.useState(value ? ((value - min) / (max - min)) * 100 : 0);
   const [positionCursor, setPositionCursor] = React.useState(
     value ? value : min
   );
-  const slide = React.useRef(null);
+  const slide = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const rect = slide.current.getBoundingClientRect();
+    const rect = slide?.current?.getBoundingClientRect();
     const minPosition = 0;
-    const maxPosition = rect.width;
+    const maxPosition = rect?.width || 0;
+    const x = rect?.x || 0;
+    const y = rect?.y || 0;
+    const height = rect?.height || 0;
+
     let positionAbsolute = positionCursorPercentage;
     window.onmousemove = (ev: MouseEvent): any => {
-      const position = vertical
-        ? rect.y + rect.height - ev.clientY
-        : ev.clientX - rect.x;
+      const position = vertical ? y + height - ev.clientY : ev.clientX - x;
       if (enable) {
         window.onmouseup = (evMouseUp: MouseEvent): any => {
           setEnable(false);

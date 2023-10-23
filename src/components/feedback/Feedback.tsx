@@ -1,5 +1,5 @@
 import { icons } from "@/constants/icons";
-import { FC, ReactNode, useState } from "react";
+import { FC, MouseEvent, MouseEventHandler, ReactNode, useState } from "react";
 import Popup from "reactjs-popup";
 import { RatingStarts } from "../ratingStars/Rating";
 import styles from "./feedback.module.scss";
@@ -7,6 +7,7 @@ import Image from "next/image";
 import TabOne from "../../components/tabs/TabOne";
 import TabTwo from "../../components/tabs/TabTwo";
 import Tabs from "../tabs/TabS";
+import { Modal } from "../modal/Modal";
 
 type FeedBackProducts = {
   id: number;
@@ -47,45 +48,43 @@ export type FeedBackProductsProps = {
 
 export const FeedBack: FC<FeedBackProductsProps> = (feedBack) => {
   const [selectedTab, setSelectedTab] = useState<number>(tabs[0].index);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const close = () => {
+    setIsOpen(false);
+  };
+
+  const open = () => {
+    setIsOpen(true);
+  };
+
   return (
     <div className={styles.feedBack}>
       <h1 className={styles.titleName}>Відгуки / запитання про Dior Sauvage</h1>
-      <Popup
-        trigger={<button className={styles.button}>Залишити відгук</button>}
-        position="right center"
-      >
-        {(close: () => void): ReactNode => (
-          <div onClick={close} className={styles.popUp}>
-            <div
-              onClick={(event: MouseEvent): void => {
-                event.stopPropagation();
-              }}
-              className={styles.content}
-            >
-              <h2 className={styles.textStyles}>
-                <strong>Sauvage</strong> Christian Dior
-              </h2>
-              <form action="#">
-                <span>Ваша оцінка</span>
-                <RatingStarts />
-                <textarea
-                  className={styles.textArea}
-                  name="feedback"
-                ></textarea>
-                <button className={styles.insideButton}>Залишити відгук</button>
-              </form>
-              <Image
-                onClick={close}
-                className={styles.buttonClose}
-                src={icons.CROSS_ICON}
-                height={15}
-                width={15}
-                alt={"CROSS"}
-              ></Image>
-            </div>
-          </div>
-        )}
-      </Popup>
+      <button className={styles.button} onClick={open}>
+        Залишити відгук
+      </button>
+      <Modal isOpen={isOpen} close={close} position="center">
+        <div className={styles.content}>
+          <h2 className={styles.textStyles}>
+            <strong>Sauvage</strong> Christian Dior
+          </h2>
+          <form action="#">
+            <span>Ваша оцінка</span>
+            <RatingStarts />
+            <textarea className={styles.textArea} name="feedback"></textarea>
+            <button className={styles.insideButton}>Залишити відгук</button>
+          </form>
+          <Image
+            onClick={close}
+            className={styles.buttonClose}
+            src={icons.CROSS_ICON}
+            height={15}
+            width={15}
+            alt={"CROSS"}
+          ></Image>
+        </div>
+      </Modal>
       <Tabs selectedTab={selectedTab} onClick={setSelectedTab} tabs={tabs} />
       <div className={styles.feedBackComments}>
         {feedBack.feedBackList.map((item, index) => {
