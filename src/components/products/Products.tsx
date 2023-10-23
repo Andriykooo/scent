@@ -107,7 +107,7 @@ export const Products: FC<ProductsProps> = ({ products, isButton = true }) => {
               <span className={styles.BottomTitleName}> {item.subTitle}</span>
               <div className={styles.Holder}>
                 <div>
-                  <RatingStarts />
+                  <RatingStarts size={10} />
                   <span className={styles.CostStyle}>
                     {item.sellStatus ? (
                       <span className={styles.grayColor}>Продано</span>

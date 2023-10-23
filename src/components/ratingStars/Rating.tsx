@@ -6,7 +6,10 @@ import Image from "next/image";
 interface Array<T> {
   fill(value: T): Array<T>;
 }
-export const RatingStarts: FC = () => {
+type Props = {
+  size: number;
+};
+export const RatingStarts: FC<Props> = ({ size = 10 }) => {
   const [listIsRating, setListIsRating] = useState([
     false,
     false,
@@ -37,8 +40,8 @@ export const RatingStarts: FC = () => {
                 RatingAssessment(index);
               }}
               src={isActive ? icons.STAR_ICON : icons.STAR_ICON_OUTLINE}
-              height={10}
-              width={10}
+              height={size}
+              width={size}
               alt={isActive ? "StarFill" : "StarOutline"}
             />
           </span>

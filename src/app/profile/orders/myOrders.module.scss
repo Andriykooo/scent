@@ -11,6 +11,7 @@
   padding-bottom: 10px;
   span {
     padding-left: 10px;
+    padding-right: 50px;
   }
 }
 .wrapper {
@@ -39,7 +40,6 @@
 }
 
 .productWrapper {
-  padding-top: 5px;
   gap: 40px;
   row-gap: 5px;
   padding-left: 20px;
@@ -48,22 +48,30 @@
 .orderList {
   li {
     padding-bottom: 30px;
-    gap: 48px;
     display: flex;
     justify-content: space-between;
-
+    &.header {
+      ul {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
     ul {
       flex-grow: 1;
+      margin-top: -15px;
+      margin-bottom: -15px;
     }
     li {
+      padding-bottom: 15px;
+      padding-top: 15px;
       display: block;
       & > div {
-        width: 21.66%;
+        width: 19%;
         text-align: center;
         display: inline-block;
 
         &:first-child {
-          width: 35%;
+          width: 55%;
         }
       }
     }
@@ -75,22 +83,98 @@
   border-bottom: 1px solid #979797;
 }
 
-.grayTextColor {
+.createData {
   color: #979797;
   font-size: 14px;
+  padding-right: 65px;
+  padding-left: 65px;
 }
 
 .textStyles {
   font-size: 16px;
   display: flex;
+  flex-direction: row;
   gap: 5px;
+  justify-content: flex-end;
+  width: 65px;
 }
 .UserTextStyles {
   font-size: 16px;
-  width: 130px;
+  width: 80px;
 }
 
 .ProductNameTextStyles {
   font-size: 16px;
-  width: 130px;
+}
+
+.volumeAndPrise {
+  font-size: 16px;
+}
+
+.productOrderNumber {
+  font-size: 14px;
+  width: 147px;
+  text-align: center;
+}
+.productItem {
+  border-top: 1px solid #979797;
+  &:first-child {
+    border-top: none;
+  }
+}
+.header {
+  font-size: 14px;
+  color: black !important;
+  padding: 0;
+  padding-top: 31px;
+  padding-bottom: 0 !important;
+  padding-left: 0;
+  padding-right: 0;
+  font-weight: 300 !important;
+  border-top: none;
+  .productItem {
+    padding: 0;
+    font-weight: 300;
+    border-top: none;
+  }
+  strong {
+    font-weight: 300;
+  }
+
+  .createData {
+    color: black;
+    width: 238px;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .productOrderNumber {
+    font-size: 14px;
+    width: 147-px;
+  }
+  .volumeAndPrise {
+    font-size: 14px;
+  }
+  .ProductNameTextStyles {
+    font-size: 14px;
+    width: 80px;
+  }
+  .UserTextStyles {
+    font-size: 14px;
+  }
+  .price {
+    text-align: center;
+  }
+  .textStyles {
+    font-size: 14px;
+    justify-content: center;
+    width: 129px;
+  }
+}
+
+.orderListIcon {
+  padding-left: 40px;
+}
+
+.colabs {
+  width: 55px;
 }

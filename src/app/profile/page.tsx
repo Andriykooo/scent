@@ -6,6 +6,8 @@ import React from "react";
 import styles from "./profile.module.scss";
 import Image from "next/image";
 import { ProfileMenu } from "@/components/profileMenu/profileMenu";
+import { routes } from "@/constants/routes";
+import Link from "next/link";
 
 export default function ProfilePage() {
   return (
@@ -14,15 +16,23 @@ export default function ProfilePage() {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.bar}>
-            <div className={styles.userEllipse}>
-              <Image
-                src={icons.USER_ELLIPSE}
-                height={40}
-                width={40}
-                alt="profile"
-              ></Image>
-              <span>tizary777</span>
-            </div>
+            <Link href={routes.PROFILE_USER_PAGE}>
+              <div className={styles.userEllipse}>
+                <Image
+                  src={icons.USER_ELLIPSE}
+                  height={40}
+                  width={40}
+                  alt="profile"
+                ></Image>
+                <span>tizary777</span>
+                <Image
+                  src={icons.VERIFICATION}
+                  height={17}
+                  width={50}
+                  alt="profile"
+                />
+              </div>
+            </Link>
             <ProfileMenu />
           </div>
           <div className={styles.content}>
@@ -31,7 +41,9 @@ export default function ProfilePage() {
                 <h2>Особисті дані</h2>
               </div>
               <div>
-                <a href="">Редагувати</a>
+                <a className={styles.editButton} href="">
+                  Редагувати
+                </a>
               </div>
             </div>
             <div>
@@ -90,7 +102,7 @@ export default function ProfilePage() {
             <div>
               <div className={styles.personalInfo}>
                 <div className={styles.personalInfoWrapper}>
-                  <div>
+                  <div className={styles.gmail}>
                     <label htmlFor="Email">Електронна пошта</label>
                     <input
                       id="Email"
@@ -114,6 +126,35 @@ export default function ProfilePage() {
                       value={"@petro.mostavchuk"}
                     />
                   </div>
+                </div>
+              </div>
+              <div className={styles.morePersonalDataWrapper}>
+                <div>
+                  <label htmlFor="Телеграм">Телеграм</label>
+                  <input id="Телеграм" type="text" value={"petro20"} />
+                </div>
+                <div>
+                  <label htmlFor="Вайбер">Вайбер</label>
+                  <input id="Вайбер" type="text" value={"mostavchuk20"} />
+                </div>
+                <div>
+                  <label htmlFor="Ватсап">Ватсап</label>
+                  <input id="Ватсап" type="text" value={"petrom20"} />
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2>Гаманець</h2>
+            </div>
+            <div>
+              <div className={styles.wallet}>
+                <div className={styles.walletWrapper}>
+                  <label htmlFor="Номер карти">Номер карти</label>
+                  <input
+                    id="Номер карти"
+                    type="text"
+                    value={"5375 4141 0000 0000"}
+                  />
                 </div>
               </div>
             </div>

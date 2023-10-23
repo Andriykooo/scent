@@ -1,8 +1,26 @@
 .navigation {
   display: flex;
-  justify-content: center;
   padding-top: 25px;
   li {
     padding-bottom: 25px;
+  }
+  ul {
+    flex-grow: 1;
+    padding-left: 45px;
+  }
+}
+
+.active {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    width: 3px;
+    right: 0;
+    background-color: black;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
   }
 }

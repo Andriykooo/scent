@@ -1,8 +1,6 @@
-import React, { ReactNode, MouseEvent } from "react";
+import React, { ReactNode, MouseEvent, useState } from "react";
 import { Popup } from "reactjs-popup";
 import styles from "./popUp.module.scss";
-import Image from "next/image";
-import { icons } from "@/constants/icons";
 import { PhotoGallery } from "../photoGallary/PhotoGallary";
 
 type PopUpProps = {

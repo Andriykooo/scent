@@ -7,7 +7,7 @@ import classNames from "classnames";
 const ProfileMenuList = [
   {
     id: 1,
-    name: "Мої продукти",
+    name: "Моя вітрина",
     path: routes.PROFILE_MY_PRODUCT,
   },
   {
@@ -21,11 +21,6 @@ const ProfileMenuList = [
     path: routes.PROFILE_WISH_LIST,
   },
   {
-    id: 4,
-    name: "Переглянуті товари",
-    path: routes.PROFILE_REVIEWED_GOODS,
-  },
-  {
     id: 5,
     name: "Чат з користувачем",
     path: routes.PROFILE_CHAT_WITH_USER,
@@ -37,8 +32,8 @@ const ProfileMenuList = [
   },
   {
     id: 7,
-    name: "Гаманець",
-    path: routes.PROFILE_WALLET,
+    name: "Мої блоги ",
+    path: routes.PROFILE_MY_BLOGS,
   },
 ];
 export const ProfileMenu: FC = () => {

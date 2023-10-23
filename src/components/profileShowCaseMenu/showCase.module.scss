@@ -1,0 +1,52 @@
+.navigation {
+  flex-grow: 1;
+  padding-top: 25px;
+  margin-right: 15px;
+
+  li {
+    padding-bottom: 25px;
+  }
+  ul {
+    padding-left: 45px;
+  }
+  strong {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.active {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    width: 3px;
+    right: 0;
+    background-color: black;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+  }
+}
+
+.filter {
+  padding-top: 10px;
+  ul {
+    padding-top: 10px;
+  }
+}
+
+.holder {
+  border-bottom: solid #979797 1px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.navigationWrapper {
+  ul {
+    border-bottom: solid #979797 1px;
+  }
+}

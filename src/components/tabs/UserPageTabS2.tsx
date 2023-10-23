@@ -1,15 +1,10 @@
-"use client";
-import { BreadCrumbs } from "@/components/breadCrumbs/breadCrumbs";
 import { icons } from "@/constants/icons";
-import React, { useState } from "react";
-import styles from "./myProducts.module.scss";
+import React, { FC, Fragment, useState } from "react";
+import { Icon } from "../icon/Icon";
+import { ProductGallary } from "../productGallary/ProductGallary";
+import styles from "./tabs.module.scss";
 import Image from "next/image";
-import { ProfileMenu } from "@/components/profileMenu/profileMenu";
-import { Icon } from "@/components/icon/Icon";
-import { ProductGallary } from "@/components/productGallary/ProductGallary";
-import Link from "next/link";
-import { routes } from "@/constants/routes";
-
+import { ShowCaseProfileMenu } from "../profileShowCaseMenu/ShowCase";
 const Data = [
   {
     id: 1,
@@ -102,42 +97,42 @@ const Data = [
   },
 ];
 
-export default function MyProducts() {
+const UserPageTab2: FC<{}> = ({}) => {
+  const [listIsFavorite, setListIsFavorite] = useState<{
+    [key: string]: boolean;
+  }>({
+    0: true,
+  });
+
+  const favoriteClickHandler = (id: number) => {
+    setListIsFavorite((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
   return (
-    <div>
-      <BreadCrumbs breadCrumbsPass="PROFILE" />
+    <Fragment>
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.bar}>
-            <Link href={routes.PROFILE_USER_PAGE}>
-              <div className={styles.userEllipse}>
-                <Image
-                  src={icons.USER_ELLIPSE}
-                  height={40}
-                  width={40}
-                  alt="profile"
-                ></Image>
-                <span>tizary777</span>
-                <Image
-                  src={icons.VERIFICATION}
-                  height={17}
-                  width={50}
-                  alt="profile"
-                />
-              </div>
-            </Link>
-            <ProfileMenu />
+            <ShowCaseProfileMenu />
           </div>
           <div className={styles.content}>
             <div className={styles.myProductsHeader}>
               <div className={styles.myProductsWrapper}>
-                <h1>49 товарів</h1>
-              </div>
-
-              <div className={styles.fillterStyles}>
-                <h2>Додати продукт</h2>
-                <Image
+                <Icon
                   src={icons.ADD_ICON}
+                  height={18}
+                  width={18}
+                  alt="addIcon"
+                ></Icon>
+              </div>
+              <div className={styles.fillterStyles}>
+                <h2>
+                  Спочатку: <strong>Найпопулярніші</strong>
+                </h2>
+                <Image
+                  src={icons.ARROW_DOWN_ICON}
                   height={18}
                   width={18}
                   alt="addIcon"
@@ -157,16 +152,19 @@ export default function MyProducts() {
                     subTitle={item.subTitle}
                     rating={item.rating}
                     image={item.image}
-                    listIsFavorite={{ key1: true, key2: false }}
-                    isButton={false}
-                    isEdit={true}
-                    deleteClickHandler={() => console.log(item.id)}
+                    listIsFavorite={listIsFavorite}
+                    isButton={true}
+                    isEdit={false}
+                    favoriteClickHandler={(event) => {
+                      favoriteClickHandler(item.id);
+                    }}
                   ></ProductGallary>
                 ))}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
-}
+};
+export default UserPageTab2;
