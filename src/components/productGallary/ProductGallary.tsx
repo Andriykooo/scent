@@ -17,7 +17,7 @@ type ProductGallaryProps = {
   subTitle: string;
   rating: { stars: number; votes: number };
   image: string;
-  listIsFavorite: number[];
+  listIsFavorite: { [key: string]: boolean };
   isButton: boolean;
   isEdit: boolean;
   deleteClickHandler?: (id: number) => void;
@@ -63,8 +63,8 @@ export const ProductGallary: FC<ProductGallaryProps> = ({
                 favoriteClickHandler(id);
               }}
               src={icons.HEART_FILL}
-              height={15}
-              width={15}
+              height={17}
+              width={17}
               alt={"HeartFill"}
             />
           ) : (
@@ -74,8 +74,8 @@ export const ProductGallary: FC<ProductGallaryProps> = ({
                 favoriteClickHandler(id);
               }}
               src={icons.HEART_OUTLINE}
-              height={15}
-              width={15}
+              height={17}
+              width={17}
               alt={"HeartOutLine"}
             />
           ))}
@@ -85,7 +85,7 @@ export const ProductGallary: FC<ProductGallaryProps> = ({
       <span className={styles.BottomTitleName}> {subTitle}</span>
       <div className={styles.Holder}>
         <div>
-          <RatingStarts />
+          <RatingStarts size={10} />
           <span className={styles.CostStyle}>
             {sellStatus ? (
               <span className={styles.grayColor}>Продано</span>

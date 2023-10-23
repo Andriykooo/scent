@@ -120,7 +120,7 @@ export const FeedBack: FC<FeedBackProductsProps> = (feedBack) => {
                 <div className={styles.feedBackCommentContent}>
                   <div className={styles.comment}>
                     <div className={styles.userHolder}>
-                      <RatingStarts />
+                      <RatingStarts size={10} />
                     </div>
                     <div className={styles.contentBox}>
                       <p>{item.content}</p>

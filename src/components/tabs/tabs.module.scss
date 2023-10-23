@@ -16,3 +16,194 @@
     }
   }
 }
+
+.blog {
+  padding-top: 35px;
+}
+
+.blogWrapper {
+  display: grid;
+  gap: 75px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.dataWrapper {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+.data {
+  span {
+    color: #979797;
+  }
+}
+
+.aboutBlog {
+  padding-left: 10px;
+  padding-bottom: 20px;
+  text-align: start;
+  span {
+    font-size: 19px;
+    font-weight: 600;
+  }
+}
+
+.item {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.content {
+  min-height: 100vh;
+  border-left: 1px solid #979797;
+  flex-grow: 1;
+}
+
+.personalDataStyles {
+  gap: 80px;
+}
+
+.myProductsHeader {
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #979797;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  align-items: center;
+  h1 {
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  h2 {
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+.fillterStyles {
+  display: flex;
+  align-items: center;
+}
+
+.productWrapper {
+  gap: 40px;
+  row-gap: 5px;
+  display: flex;
+  padding-left: 20px;
+  flex-wrap: wrap;
+  & > div {
+    flex: 0 0 5%;
+  }
+}
+.bar {
+  display: flex;
+  width: 60%;
+  padding-top: 25px;
+}
+
+.textStyles {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.userPageFeedBackStyles {
+  display: flex;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  border-top: 1px solid #979797;
+}
+.userPageFeedBackStyleBox {
+  &:first-child > div {
+    border-top: none;
+  }
+}
+
+.userPageData {
+  padding-right: 10px;
+  width: 300px;
+  flex-shrink: 0;
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: -15px;
+  }
+}
+
+.userPageFeedBackData {
+  flex-shrink: 0;
+
+  span {
+    display: block;
+    color: #979797;
+    font-size: 14px;
+  }
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.comment {
+  display: flex;
+  font-size: 14px;
+  width: 77%;
+}
+
+.feedBackCommentContent {
+  font-size: 14px;
+  width: 100%;
+}
+
+.contentBox {
+  p {
+    margin: 0 0 10px;
+  }
+  .answer {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    color: #979797;
+  }
+}
+
+.userHolder {
+  display: flex;
+  width: 160px;
+  flex-shrink: 0;
+  text-align: right;
+  justify-content: end;
+  margin-right: 5px;
+  img {
+    align-items: center;
+  }
+  > em {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+  }
+}
+
+.userPageProductNameWrapper {
+  display: flex;
+  width: 24%;
+}
+
+.userPageProductName {
+  font-size: 14px;
+  color: #979797;
+}

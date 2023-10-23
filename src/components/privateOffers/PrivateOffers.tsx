@@ -75,7 +75,7 @@ export const PrivateOffers: FC<PrivateOffersProps> = (offers) => {
             <div className={styles.userName}>{item.userName}</div>
           </div>
           <div className={styles.starts}>
-            <RatingStarts />
+            <RatingStarts size={10} />
           </div>
           <div className={styles.Images}>
             <ul>

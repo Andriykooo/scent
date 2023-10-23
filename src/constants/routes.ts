@@ -11,5 +11,9 @@ export const routes = {
   PROFILE_REVIEWED_GOODS: "/profile/reviewedGoods",
   PROFILE_CHAT_WITH_USER: "/profile/chatWithUser",
   PROFILE_MY_REVIEWS: "/profile/reviews",
+  PROFILE_MY_BLOGS: "/profile/blogs",
   PROFILE_WALLET: "/profile/wallet",
+  PROFILE_USER_PAGE: "/profile/userPage",
+  SHOW_CASE_DISCOUNT: "/profile/discountedProducts",
+  SHOW_CASE_NOVETLY: "/profile/novetly",
 } as const;
