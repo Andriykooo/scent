@@ -71,9 +71,13 @@ export const FeedBack: FC<FeedBackProductsProps> = (feedBack) => {
           </h2>
           <form action="#">
             <span>Ваша оцінка</span>
-            <RatingStarts />
+            <div className={styles.ratingStars}>
+              <RatingStarts size={10} />
+            </div>
             <textarea className={styles.textArea} name="feedback"></textarea>
-            <button className={styles.insideButton}>Залишити відгук</button>
+            <div className={styles.styleInsideButton}>
+              <button className={styles.insideButton}>Залишити відгук</button>
+            </div>
           </form>
           <Image
             onClick={close}

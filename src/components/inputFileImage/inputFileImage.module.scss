@@ -1,0 +1,31 @@
+.container {
+  input {
+    display: none;
+  }
+}
+
+.preview {
+  position: relative;
+  max-width: 150px;
+  max-height: 150px;
+  img {
+    width: 100%;
+  }
+}
+.delete {
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  position: absolute;
+  background: none;
+  border: none;
+}
+
+.add {
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  position: absolute;
+  background: none;
+  border: none;
+}

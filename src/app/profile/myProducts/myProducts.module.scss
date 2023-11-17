@@ -61,6 +61,7 @@
 .fillterStyles {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .productWrapper {
@@ -71,5 +72,139 @@
   flex-wrap: wrap;
   & > div {
     flex: 0 0 5%;
+  }
+}
+
+.titleWrapper {
+  position: relative;
+  img {
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    position: absolute;
+  }
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
+
+.stepStatus {
+  display: flex;
+  flex-direction: row;
+  > div {
+    width: 100%;
+    height: 3px;
+    background: #979797;
+  }
+}
+.active {
+  background-color: black !important;
+  border-radius: 1px 1px;
+}
+
+.controlButtons {
+  display: flex;
+  justify-content: space-between;
+  button {
+    border: none;
+    background: none;
+  }
+}
+
+.autoCompleteContainer {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  input {
+    outline: none;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #979797;
+    option[value=""][disabled] {
+      display: none;
+    }
+    option {
+      color: black;
+    }
+    &:hover {
+      border-bottom: 1px solid black;
+    }
+  }
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.stepTwoContainer {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  max-width: 300px;
+  margin: 0 auto;
+  input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #979797;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+}
+
+.inputFileImage {
+  padding-top: 114px;
+  padding-bottom: 114px;
+  gap: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.infoImageLoader {
+  color: #979797;
+  text-align: center;
+}
+
+.infoImageLoaderButton {
+  display: flex;
+  justify-content: center;
+  button {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    padding: 9px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 10px;
+  }
+}
+
+.stepFour {
+  text-align: center;
+  padding-top: 112px;
+}
+
+.textArea {
+  padding: 7px;
+  resize: none;
+  width: 700px;
+  height: 170px;
+  border-radius: 10px;
+  background-color: none;
+  border-color: #979797;
+}
+
+.button {
+  padding-top: 112px;
+  button {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    padding: 9px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 10px;
   }
 }

@@ -1,9 +1,20 @@
-"use client";
-import { FC, useState } from "react";
+import React from "react";
 import styles from "./button.module.scss";
-import { icons } from "@/constants/icons";
-import Image from "next/image";
+import classNames from "classnames";
+type BuyButtonProps = {
+  showButton: boolean;
+};
 
-export const BuyButton: FC = ({}) => {
-  return <button className={styles.ButtonWrapper}>КУПИТИ</button>;
+export const BuyButton = ({ showButton = false }: BuyButtonProps) => {
+  return (
+    <button
+      className={classNames(
+        showButton
+          ? `${styles.ButtonWrapper} ${styles.show} `
+          : styles.ButtonWrapper
+      )}
+    >
+      КУПИТИ
+    </button>
+  );
 };

@@ -5,7 +5,6 @@ export const icons = {
   ARROW: "/icons/arrow.svg",
   CLOSE: "/icons/close.svg",
   DESIGNER: "/icons/designer.svg",
-
   PARFUME1_ICON: "/icons/perfume1.svg",
   PARFUME2_ICON: "/icons/perfume2.svg",
   PARFUME3_ICON: "/icons/perfume3.svg",
@@ -39,6 +38,8 @@ export const icons = {
   SUCCESS_ICON: "/icons/success.svg",
   VERIFICATION: "/icons/verification.svg",
   ARROW_UP_ICON: "/icons/arrrow_up.svg",
+  UP_LOAD_IMAGE_ICON: "/icons/Group 4345.png",
+  PLUS_ADD_IMAGE_ICON: "/icons/Group 24.svg",
 } as const;
 
 export const socialIcons = {
