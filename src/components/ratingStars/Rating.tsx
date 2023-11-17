@@ -7,7 +7,7 @@ interface Array<T> {
   fill(value: T): Array<T>;
 }
 type Props = {
-  size: number;
+  size?: number;
 };
 export const RatingStarts: FC<Props> = ({ size = 10 }) => {
   const [listIsRating, setListIsRating] = useState([
