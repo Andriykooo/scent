@@ -1,6 +1,5 @@
 import { icons } from "@/constants/icons";
 import { FC, MouseEvent, MouseEventHandler, ReactNode, useState } from "react";
-import Popup from "reactjs-popup";
 import { RatingStarts } from "../ratingStars/Rating";
 import styles from "./feedback.module.scss";
 import Image from "next/image";

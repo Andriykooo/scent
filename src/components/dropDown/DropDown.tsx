@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import styles from "./dropDown.module.scss";
 import Image from "next/image";
 import { icons } from "@/constants/icons";
-import { useClickOutside } from "@/hooks/useClickOutside";
 
 interface DropdownProps {
   options: string[];

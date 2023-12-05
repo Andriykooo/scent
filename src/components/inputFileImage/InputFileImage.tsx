@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import styles from "./inputFileImage.module.scss";
 import Image from "next/image";
 import { icons } from "@/constants/icons";
 import useUniqueId from "@/hooks/useUniqueId";
-
-const InputFileImage = () => {
+import { bannerImages } from "@/constants/images";
+type InputFileImageProps = {
+  logo?: boolean;
+  background?: boolean;
+};
+const InputFileImage: FC<InputFileImageProps> = ({ logo, background }) => {
   const [selectedImage, setSelectedImage] = useState();
   const uniqueId = useUniqueId();
   const imageChange = (e: any) => {
@@ -27,7 +31,7 @@ const InputFileImage = () => {
           onChange={imageChange}
         />
         <label htmlFor={uniqueId}>
-          {!selectedImage && (
+          {!selectedImage && !logo && !background && (
             <div className={styles.preview}>
               <img src={icons.UP_LOAD_IMAGE_ICON} className={styles.image} />
 
@@ -36,6 +40,43 @@ const InputFileImage = () => {
                   src={icons.PLUS_ADD_IMAGE_ICON}
                   height={20}
                   width={20}
+                  alt="addIcon"
+                ></Image>
+              </button>
+            </div>
+          )}
+          {!selectedImage && logo && !background && (
+            <div className={styles.previewProfileLogo}>
+              <img src={icons.USER_ELLIPSE} className={styles.profileLogo} />
+
+              <button
+                onClick={removeSelectedImage}
+                className={styles.addProfileLogo}
+              >
+                <Image
+                  src={icons.ADD_ICON_ALTERNATINE}
+                  height={40}
+                  width={40}
+                  alt="addIcon"
+                ></Image>
+              </button>
+            </div>
+          )}
+          {!selectedImage && !logo && background && (
+            <div className={styles.previewProfileBackGround}>
+              <img
+                src={bannerImages.IMAGE_BG}
+                className={styles.profileBackGround}
+              />
+
+              <button
+                onClick={removeSelectedImage}
+                className={styles.addProfileBackGround}
+              >
+                <Image
+                  src={icons.ADD_ICON_ALTERNATINE}
+                  height={40}
+                  width={40}
                   alt="addIcon"
                 ></Image>
               </button>

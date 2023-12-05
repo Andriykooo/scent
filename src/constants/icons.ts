@@ -40,6 +40,11 @@ export const icons = {
   ARROW_UP_ICON: "/icons/arrrow_up.svg",
   UP_LOAD_IMAGE_ICON: "/icons/Group 4345.png",
   PLUS_ADD_IMAGE_ICON: "/icons/Group 24.svg",
+  ADD_ICON_ALTERNATINE: "/icons/icon _addphoto.svg",
+  CARD_LOGO: "/icons/Cardlogo.svg",
+  CARD_LOGO_VISA: "/icons/VisaLogoCard.svg",
+  CARD_ICON_EDIT: "/icons/iconedit.svg",
+  CARD_ICON_ADD: "/icons/icon _add_plus.svg",
 } as const;
 
 export const socialIcons = {
