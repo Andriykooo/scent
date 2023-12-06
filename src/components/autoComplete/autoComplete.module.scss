@@ -1,0 +1,16 @@
+.autoCompleteWrapper {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.suggestion {
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  position: absolute;
+  top: 100;
+  left: 0;
+  li {
+    cursor: pointer;
+  }
+}

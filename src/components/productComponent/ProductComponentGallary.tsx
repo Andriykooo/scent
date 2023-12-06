@@ -117,7 +117,7 @@ export const Product: FC<ProductProps> = (product) => {
             <strong>Безкоштовна доставка</strong>
           </div>
         </div>
-        <BuyButton />
+        <BuyButton showButton={true} />
         <div>
           <CustomSelect />
         </div>

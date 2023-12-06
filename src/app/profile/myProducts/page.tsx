@@ -1,14 +1,18 @@
 "use client";
+import classNames from "classnames";
 import { BreadCrumbs } from "@/components/breadCrumbs/breadCrumbs";
 import { icons } from "@/constants/icons";
-import React, { useState } from "react";
+import React, { FC, MouseEventHandler, useEffect, useState } from "react";
 import styles from "./myProducts.module.scss";
 import Image from "next/image";
 import { ProfileMenu } from "@/components/profileMenu/profileMenu";
-import { Icon } from "@/components/icon/Icon";
 import { ProductGallary } from "@/components/productGallary/ProductGallary";
 import Link from "next/link";
 import { routes } from "@/constants/routes";
+import { Modal } from "@/components/modal/Modal";
+import Autocomplete from "@/components/autoComplete/AutoComplete";
+import Dropdown from "@/components/dropDown/DropDown";
+import InputFileImage from "@/components/inputFileImage/InputFileImage";
 
 const Data = [
   {
@@ -102,6 +106,133 @@ const Data = [
   },
 ];
 
+const AddProduct: FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [step, setStep] = useState(0);
+  const arr = Array.from({ length: 4 });
+  const NextHandler = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    step < 3 && setStep(step + 1);
+    e.preventDefault();
+  };
+  const PrevHandler = () => {
+    step > 0 && setStep(step - 1);
+  };
+
+  return (
+    <>
+      <div
+        onClick={() => {
+          setIsOpen(true);
+        }}
+        className={styles.fillterStyles}
+      >
+        <h2>Додати продукт</h2>
+        <Image
+          src={icons.ADD_ICON}
+          height={18}
+          width={18}
+          alt="addIcon"
+        ></Image>
+      </div>
+      <Modal
+        isOpen={isOpen}
+        close={() => {
+          setIsOpen(false);
+        }}
+        position="center"
+        className={styles.addProductForm}
+      >
+        <div className={styles.titleWrapper}>
+          <div className={styles.titleText}>
+            <h1>Публікація</h1>
+          </div>
+          <div
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            className={styles.imageWrapper}
+          >
+            <Image
+              src={icons.CROSS_ICON}
+              height={18}
+              width={18}
+              alt="addIcon"
+            ></Image>
+          </div>
+        </div>
+
+        <div className={styles.stepStatus}>
+          {arr.map((item, index) => (
+            <div className={classNames(step === index && styles.active)} />
+          ))}
+        </div>
+        {/* <form action="#"> */}
+        {step === 0 && (
+          <div className={styles.stepOne}>
+            <div className={styles.autoCompleteContainer}>
+              <Autocomplete />
+              <Dropdown
+                options={["1", "Розлив", "2", "3"]}
+                label={"Тип лота"}
+              />
+              <Dropdown
+                options={["1", "Парфумована вода", "2 ", "3"]}
+                label={"Концентрація"}
+              />
+            </div>
+          </div>
+        )}
+        {step === 1 && (
+          <div className={styles.stepTwo}>
+            <div className={styles.stepTwoContainer}>
+              <input placeholder="Кількість в наявності" type="text" />
+              <input placeholder="Мінімальна кількість розливу" type="text" />
+              <input placeholder="Ціна за 1 мл. парфуму" type="text" />
+            </div>
+          </div>
+        )}
+        {step === 2 && (
+          <div className={styles.stepThree}>
+            <div className={styles.inputFileImage}>
+              <InputFileImage />
+              <InputFileImage />
+              <InputFileImage />
+              <InputFileImage />
+            </div>
+            <div className={styles.infoImageLoader}>
+              <p>Мінімум 2 фото</p>
+            </div>
+            <div className={styles.infoImageLoaderButton}>
+              <button>Завантажити фото</button>
+            </div>
+          </div>
+        )}
+        {step === 3 && (
+          <div className={styles.stepFour}>
+            <div className={styles.additional}>
+              <textarea
+                placeholder="Додаткова інформація продукту"
+                className={styles.textArea}
+              ></textarea>
+            </div>
+            <div className={styles.button}>
+              <button>Опублікувати</button>
+            </div>
+          </div>
+        )}
+        {/* </form> */}
+        <div className={styles.controlButtons}>
+          <button disabled={step === 0} onClick={PrevHandler}>
+            Назад
+          </button>
+          <a onClick={NextHandler} href="next">
+            Далі
+          </a>
+        </div>
+      </Modal>
+    </>
+  );
+};
 export default function MyProducts() {
   return (
     <div>
@@ -133,16 +264,7 @@ export default function MyProducts() {
               <div className={styles.myProductsWrapper}>
                 <h1>49 товарів</h1>
               </div>
-
-              <div className={styles.fillterStyles}>
-                <h2>Додати продукт</h2>
-                <Image
-                  src={icons.ADD_ICON}
-                  height={18}
-                  width={18}
-                  alt="addIcon"
-                ></Image>
-              </div>
+              <AddProduct />
             </div>
             <div className={styles.productWrapper}>
               {Data &&

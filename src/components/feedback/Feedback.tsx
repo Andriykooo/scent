@@ -1,6 +1,5 @@
 import { icons } from "@/constants/icons";
 import { FC, MouseEvent, MouseEventHandler, ReactNode, useState } from "react";
-import Popup from "reactjs-popup";
 import { RatingStarts } from "../ratingStars/Rating";
 import styles from "./feedback.module.scss";
 import Image from "next/image";
@@ -71,9 +70,13 @@ export const FeedBack: FC<FeedBackProductsProps> = (feedBack) => {
           </h2>
           <form action="#">
             <span>Ваша оцінка</span>
-            <RatingStarts />
+            <div className={styles.ratingStars}>
+              <RatingStarts size={10} />
+            </div>
             <textarea className={styles.textArea} name="feedback"></textarea>
-            <button className={styles.insideButton}>Залишити відгук</button>
+            <div className={styles.styleInsideButton}>
+              <button className={styles.insideButton}>Залишити відгук</button>
+            </div>
           </form>
           <Image
             onClick={close}
