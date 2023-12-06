@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FC } from "react";
-import { banneData } from "../../mock/banner";
+import { bannerData } from "../../mock/banner";
 import { Carousel } from "../carousel/Carousel";
 import styles from "./banner.module.scss";
 
@@ -15,7 +15,7 @@ export const Banner: FC = () => {
       infinity
       fullWidth
       className={styles.banner_wrapper}
-      data={banneData.map((banner) => {
+      data={bannerData.map((banner) => {
         return {
           id: banner.id,
           render: (
