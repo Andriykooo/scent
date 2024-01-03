@@ -1,12 +1,12 @@
 import { FC } from "react";
 import styles from "./search-result.module.scss";
 import { Icon } from "@/components/icon/Icon";
-import { SearhResultType } from "@/types/searchResultType";
+import { SearchResultType } from "@/types/searchResultType";
 
 type SearchResultProps = {
-  data: SearhResultType[];
+  data: SearchResultType[];
   title?: string;
-  onClick: (search: SearhResultType) => void;
+  onClick: (search: SearchResultType) => void;
 };
 
 export const SearchResult: FC<SearchResultProps> = ({

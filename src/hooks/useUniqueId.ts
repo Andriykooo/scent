@@ -5,9 +5,11 @@ const getUniqueId = () => ++uniqueId;
 
 function useUniqueId() {
   const idRef = React.useRef<string>();
+
   if (idRef.current === undefined) {
     idRef.current = String(getUniqueId());
   }
+
   return idRef.current;
 }
 

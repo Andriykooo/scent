@@ -1,7 +1,7 @@
 import { bannerImages } from "@/constants/images";
-import { BnnerType } from "@/types/bannerType";
+import { BannerType } from "@/types/bannerType";
 
-export const banneData: BnnerType[] = [
+export const bannerData: BannerType[] = [
   {
     id: 1,
     title: "Scent of the year",

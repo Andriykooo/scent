@@ -1,12 +1,12 @@
-import { SearhResultType } from "@/types/searchResultType";
+import { SearchResultType } from "@/types/searchResultType";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
 const maxSize = 5;
 
 type SearchState = {
-  history: SearhResultType[];
-  addToHistory: (search: SearhResultType) => void;
+  history: SearchResultType[];
+  addToHistory: (search: SearchResultType) => void;
 };
 
 export const useSearchStore = create<SearchState>()(

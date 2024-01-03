@@ -1,4 +1,4 @@
-export type BnnerType = {
+export type BannerType = {
   id: number;
   image: string;
   title?: string;

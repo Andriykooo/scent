@@ -3,7 +3,7 @@ export const bannerImages = {
   IMAGE_2: "/images/banner/banner_2.jpg",
   IMAGE_3: "/images/banner/banner_3.jpg",
   IMAGE_4: "/images/banner/banner_4.jpg",
-  IMAGE_5: "/images/banner/pxfuel _1.png",
+  IMAGE_5: "/images/banner/bannerBgDior.png",
   IMAGE_BG: "/images/banner/bg1.png",
   BLOG_IMAGE_1: "/images/banner/imageUserBlog1.png",
   BLOG_IMAGE_2: "/images/banner/imageUserBlog2.png",

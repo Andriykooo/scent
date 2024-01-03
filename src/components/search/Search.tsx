@@ -8,7 +8,7 @@ import { Input } from "../Input/Input";
 import { SearchResult } from "./searchResult/SearchResult";
 import { search } from "@/mock/search";
 import { useSearchStore } from "@/store/useSearch";
-import { SearhResultType } from "@/types/searchResultType";
+import { SearchResultType } from "@/types/searchResultType";
 import { Modal } from "../modal/Modal";
 import { capitalize } from "../utils/capitalize";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -21,7 +21,7 @@ export const Search: FC = ({}) => {
   const [input, setInput] = useState("");
   const [isLodaing, setIsLoading] = useState(false);
   const [searchResult, setSearchResult] = useState<{
-    [key: string]: SearhResultType[];
+    [key: string]: SearchResultType[];
   }>({});
 
   const debounceInput = useDebounce<string>(input, 500);
@@ -46,7 +46,7 @@ export const Search: FC = ({}) => {
     setInput(value);
   };
 
-  const handleClick = (search: SearhResultType) => {
+  const handleClick = (search: SearchResultType) => {
     addToRecentSearch(search);
   };
 
@@ -69,7 +69,7 @@ export const Search: FC = ({}) => {
       return {
         [value.type]: [value],
       };
-    }, {} as { [key: string]: SearhResultType[] });
+    }, {} as { [key: string]: SearchResultType[] });
   };
 
   useEffect(() => {
