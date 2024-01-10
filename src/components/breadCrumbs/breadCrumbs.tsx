@@ -20,7 +20,7 @@ export const BreadCrumbs: FC<BreadCrumbsProps> = ({ breadCrumbsPass }) => {
                 word
               ) : (
                 `/${word}`
-              )
+              ),
             )}
         </span>
       </h2>

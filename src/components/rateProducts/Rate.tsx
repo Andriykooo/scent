@@ -34,7 +34,9 @@ export const RateProducts: FC<RateProductsProps> = ({ title, ratings }) => {
                   <span className={styles.grayColor}> {item.name}</span>
                   <span> {item.count}</span>
                   <span>
-                    <span className={styles.progressBar}><span style={{width: item.value+'%'}}></span></span>
+                    <span className={styles.progressBar}>
+                      <span style={{ width: item.value + "%" }}></span>
+                    </span>
                   </span>
                 </li>
               ))}

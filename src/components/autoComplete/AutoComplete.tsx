@@ -15,7 +15,7 @@ const Autocomplete = () => {
     setInputValue(value);
 
     const filteredParfumse = parfumse.filter((parfume) =>
-      parfume.toLowerCase().includes(value.toLowerCase())
+      parfume.toLowerCase().includes(value.toLowerCase()),
     );
 
     setSuggestions(filteredParfumse || []);

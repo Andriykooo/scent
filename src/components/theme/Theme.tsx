@@ -13,7 +13,7 @@ export const Theme: FC = () => {
     setTheme(
       theme === themes.LIGHT || theme === themes.SYSTEM
         ? themes.DARK
-        : themes.LIGHT
+        : themes.LIGHT,
     );
   };
 
@@ -21,7 +21,7 @@ export const Theme: FC = () => {
     <div
       className={classNames(
         styles.theme_toggler,
-        styles[theme || themes.LIGHT]
+        styles[theme || themes.LIGHT],
       )}
       onClick={handleToggle}
     />

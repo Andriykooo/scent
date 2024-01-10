@@ -15,7 +15,7 @@ export const useSearchStore = create<SearchState>()(
       history: [],
       addToHistory: (search) => {
         const newHistory = get().history.filter(
-          (item) => search?.id !== item.id
+          (item) => search?.id !== item.id,
         );
 
         newHistory.unshift(search);
@@ -31,6 +31,6 @@ export const useSearchStore = create<SearchState>()(
       name: "recent-search",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({ history: state.history }),
-    }
-  )
+    },
+  ),
 );

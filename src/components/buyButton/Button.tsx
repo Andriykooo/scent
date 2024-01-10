@@ -11,7 +11,7 @@ export const BuyButton = ({ showButton = false }: BuyButtonProps) => {
       className={classNames(
         showButton
           ? `${styles.ButtonWrapper} ${styles.show} `
-          : styles.ButtonWrapper
+          : styles.ButtonWrapper,
       )}
     >
       КУПИТИ

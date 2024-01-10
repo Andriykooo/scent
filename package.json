@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier -w ."
   },
   "dependencies": {
     "@emotion/styled": "^11.11.0",
@@ -26,6 +27,8 @@
   "devDependencies": {
     "@types/node": "20.3.1",
     "@types/react-slick": "^0.23.10",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.1",
     "typescript": "5.1.6"
   }
 }

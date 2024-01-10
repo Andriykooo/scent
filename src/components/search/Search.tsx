@@ -51,25 +51,28 @@ export const Search: FC = ({}) => {
   };
 
   const fetchSearchData = () => {
-    return search.reduce((accum, value) => {
-      if (
-        !value.name.toLowerCase().includes(input.toLowerCase()) ||
-        accum[value.type]?.length > 5
-      ) {
-        return accum;
-      }
+    return search.reduce(
+      (accum, value) => {
+        if (
+          !value.name.toLowerCase().includes(input.toLowerCase()) ||
+          accum[value.type]?.length > 5
+        ) {
+          return accum;
+        }
 
-      if (accum[value.type]) {
+        if (accum[value.type]) {
+          return {
+            ...accum,
+            [value.type]: [...accum[value.type], value],
+          };
+        }
+
         return {
-          ...accum,
-          [value.type]: [...accum[value.type], value],
+          [value.type]: [value],
         };
-      }
-
-      return {
-        [value.type]: [value],
-      };
-    }, {} as { [key: string]: SearchResultType[] });
+      },
+      {} as { [key: string]: SearchResultType[] },
+    );
   };
 
   useEffect(() => {

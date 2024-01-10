@@ -46,7 +46,7 @@ const SliderDot = (props: SliderProps) => {
   const [positionCursorPercentage, setPositionCursorPercentage] =
     React.useState(value ? ((value - min) / (max - min)) * 100 : 0);
   const [positionCursor, setPositionCursor] = React.useState(
-    value ? value : min
+    value ? value : min,
   );
   const slide = React.useRef<HTMLDivElement>(null);
 

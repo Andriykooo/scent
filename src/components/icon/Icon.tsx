@@ -28,7 +28,7 @@ export const Icon: FC<IconProps> = (props) => {
         styles[
           invert ? invertSwitch[theme as ValueOf<typeof invertSwitch>] : theme
         ],
-        props?.className
+        props?.className,
       )}
     />
   );
