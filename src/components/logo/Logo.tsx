@@ -21,7 +21,7 @@ export const Logo: FC<LogoProps> = ({ className, variant = variants.BASE }) => {
         styles.logo,
         righteous.className,
         styles[variant],
-        className
+        className,
       )}
     >
       <Link href={routes.HOME}>Scent</Link>

@@ -121,4 +121,308 @@
 .editButton {
   border-bottom: 1px solid #979797;
   color: #979797;
+  cursor: pointer;
+  align-items: center;
+}
+
+.editPopUpHeader {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.inputFileImageEditBtn {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  gap: 25px;
+  & > div:nth-child(even) {
+    flex-grow: 1;
+  }
+}
+
+.editModalProfile {
+  max-width: 870px;
+  margin-top: 20px;
+}
+
+.editAboutUser {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  h2 {
+    padding-left: 0;
+    padding-bottom: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.textArea {
+  padding: 7px;
+  resize: none;
+  width: 100%;
+  height: 130px;
+  border-radius: 10px;
+  background-color: none;
+  border-color: #d9d9d9;
+}
+
+.personalInfoEdit {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  h3 {
+    padding-left: 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.editDataStyles {
+  font-size: 14px;
+  display: flex;
+  gap: 15px;
+  input {
+    font-weight: 400;
+  }
+  div {
+    width: 33.3%;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #d9d9d9;
+    input,
+    label {
+      padding: 0;
+      display: block;
+    }
+  }
+}
+
+.contactInfoEdit {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  h4 {
+    padding-left: 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.editInfoWrapper {
+  font-size: 14px;
+  display: flex;
+  gap: 15px;
+  input {
+    font-weight: 400;
+  }
+  div {
+    width: 33.3%;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #d9d9d9;
+    input,
+    label {
+      padding: 0;
+      display: block;
+    }
+  }
+}
+
+.editDataWrapper {
+  padding-top: 20px;
+  font-size: 14px;
+  display: flex;
+  gap: 15px;
+  input {
+    font-weight: 400;
+  }
+  div {
+    width: 33.3%;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #d9d9d9;
+    input,
+    label {
+      padding: 0;
+      display: block;
+    }
+  }
+}
+
+.cards {
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  width: 335px;
+  height: 210px;
+  border-radius: 15px;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+  margin: 0 15px;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    .cardHolder,
+    .cardLogo,
+    .cardNumber {
+      filter: blur(2px);
+    }
+
+    .iconEditCard {
+      display: block;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: black;
+      opacity: 0.1;
+      border-radius: 15px;
+    }
+  }
+}
+.cardHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 90px;
+  padding-right: 20px;
+}
+.cardLogo {
+  padding-left: 20px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+.cardNumber {
+  padding-left: 20px;
+  color: #fff;
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  text-transform: uppercase;
+}
+.cardDate {
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  text-transform: uppercase;
+}
+.cardScroll {
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.iconEditCard {
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  position: absolute;
+  background: none;
+  border: none;
+}
+.frame {
+  height: 100%;
+}
+
+.walletEdit {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  h5 {
+    padding-left: 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.addCards {
+  opacity: 0.4;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  width: 335px;
+  height: 210px;
+  border-radius: 15px;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+  margin: 0 15px;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  .addIconAddCard {
+    display: block;
+  }
+  .addCardHolder,
+  .addCardLogo,
+  .addCardNumber {
+    filter: blur(2px);
+  }
+}
+.addIconAddCard {
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  position: absolute;
+  background: none;
+  border: none;
+}
+.addCardLogo {
+  padding-left: 20px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+.addCardNumber {
+  padding-left: 20px;
+  color: #fff;
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  text-transform: uppercase;
+}
+.addCardHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 90px;
+  padding-right: 20px;
+}
+
+.cardEdit {
+}
+.editCards {
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  width: 335px;
+  height: 210px;
+  border-radius: 15px;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+  margin: 0 15px;
 }
