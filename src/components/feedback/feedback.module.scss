@@ -5,6 +5,7 @@
   padding: 30px;
   position: relative;
   row-gap: 35px;
+  text-align: center;
 }
 
 .button {
@@ -38,6 +39,7 @@
 .textStyles {
   font-size: 32px;
   font-weight: 400;
+  padding-bottom: 10px;
 }
 
 .textArea {
@@ -184,4 +186,16 @@
     right: 100%;
     top: 100%;
   }
+}
+
+.ratingStars {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.styleInsideButton {
+  display: flex;
+  justify-content: center;
 }

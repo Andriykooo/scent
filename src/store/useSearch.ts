@@ -1,12 +1,12 @@
-import { SearhResultType } from "@/types/searchResultType";
+import { SearchResultType } from "@/types/searchResultType";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
 const maxSize = 5;
 
 type SearchState = {
-  history: SearhResultType[];
-  addToHistory: (search: SearhResultType) => void;
+  history: SearchResultType[];
+  addToHistory: (search: SearchResultType) => void;
 };
 
 export const useSearchStore = create<SearchState>()(
@@ -15,7 +15,7 @@ export const useSearchStore = create<SearchState>()(
       history: [],
       addToHistory: (search) => {
         const newHistory = get().history.filter(
-          (item) => search?.id !== item.id
+          (item) => search?.id !== item.id,
         );
 
         newHistory.unshift(search);
@@ -31,6 +31,6 @@ export const useSearchStore = create<SearchState>()(
       name: "recent-search",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({ history: state.history }),
-    }
-  )
+    },
+  ),
 );

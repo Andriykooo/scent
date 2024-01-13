@@ -1,0 +1,44 @@
+.dropdown {
+  margin-bottom: 30px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  button {
+    width: 100%;
+    border: none;
+    text-align: left;
+    border: none;
+    background: none;
+    color: #979797;
+    border-bottom: 1px solid #979797;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+    img {
+      right: 0;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  li {
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+.selectedStyle {
+  color: black;
+}

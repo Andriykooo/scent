@@ -54,7 +54,7 @@ export const Input: FC<InputProps> = ({
           montserrat.className,
           {
             [styles.clear]: clear,
-          }
+          },
         )}
         placeholder={placeholder}
         type={type}

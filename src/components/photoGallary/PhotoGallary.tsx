@@ -36,7 +36,7 @@ export const PhotoGallery: FC<{ photos: string[]; currentIndex: number }> = ({
             className={styles.rectangleActive}
             onClick={() => toggle(i)}
           />
-        )
+        ),
       );
     }
     setNav(nav);
@@ -71,7 +71,7 @@ export const PhotoGallery: FC<{ photos: string[]; currentIndex: number }> = ({
               width={425}
               alt={"image"}
             />
-          )
+          ),
       )}
 
       <div className={styles.nav}>{navs}</div>

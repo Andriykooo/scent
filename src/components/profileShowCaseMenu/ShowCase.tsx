@@ -112,7 +112,7 @@ export const ShowCaseProfileMenu: FC = () => {
                     <a href="#">{menuItem.name}</a>
                   </li>
                 );
-              }
+              },
             )}
           </ul>
           <p onClick={filterHandler}>

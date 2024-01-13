@@ -4,6 +4,7 @@ import { useClickOutside } from "@/hooks/useClickOutside";
 import classNames from "classnames";
 
 type ModalProps = {
+  editCard: boolean;
   isOpen: boolean;
   close: () => void;
   position?: "center" | "top";
