@@ -14,12 +14,12 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2
         with:
           playbook: .ansible/main.yml
-          key: ${{process.env.SSH_PRIVET_KEY}}
+          key: ${{secrets.SSH_PRIVET_KEY}}
           inventory: |
             [all]
              address=localhost
           options: |
             -e GITHUB_REPO=${{github.repository}}
-            -e NODE_ENV=/scent
-            -e APP_PORT=3000
-            -e APP_PATH=/scent
+            -e NODE_ENV=${{vars.NODE_ENV}}
+            -e APP_PORT=${{vars.APP_PORT}}
+            -e APP_PATH=${{vars.APP_PATH}}
