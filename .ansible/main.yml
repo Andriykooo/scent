@@ -1,0 +1,6 @@
+ name: Build Node.js Scent
+  hosts: all
+  remote_user: ubuntu
+  roles:
+    - git_pull
+    - docker_restart
