@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:16.20
 
 RUN mkdir -p /scent
 WORKDIR /scent
