@@ -3,8 +3,7 @@ FROM node:latest
 RUN mkdir -p /scent
 WORKDIR /scent
 
-COPY package.json /scent/
-COPY .env /scent/
+COPY / /scent
 
 RUN npm install --omit=dev
 
