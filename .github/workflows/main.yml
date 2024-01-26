@@ -17,7 +17,7 @@ jobs:
           key: ${{secrets.SSH_PRIVET_KEY}}
           inventory: |
             [all]
-             address=localhost
+             ${{secrets.DO}} address=localhost
           options: |
             -e GITHUB_REPO=${{github.repository}}
             -e NODE_ENV=${{vars.NODE_ENV}}
