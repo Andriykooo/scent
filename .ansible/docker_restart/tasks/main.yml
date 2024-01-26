@@ -9,7 +9,7 @@
 
 - name: Run docker container
   docker_container:
-    name: node_aws
+    name: node_do
     image: node_image
     recreate: true
     restart: true
