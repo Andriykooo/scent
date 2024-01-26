@@ -1,4 +1,4 @@
- name: Build Node.js Scent
+- name: Build Node.js app
   hosts: all
   remote_user: ubuntu
   roles:
